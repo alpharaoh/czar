@@ -81,6 +81,7 @@ class ProjectA():
 
     def threading2(self):
         os.system(f"sudo mkdir {a}/ffuf/")
+        os.system(f"sudo mkdir {a}/aquatone/")
 
         thread0 = Thread(target = self.ports)
         thread1 = Thread(target = self.ffuf_vhost)
