@@ -90,6 +90,7 @@ class ProjectA():
         thread6 = Thread(target = self.aquatone_targetUrls)
         thread7 = Thread(target = self.nucleiVulnerabilities)
         thread8 = Thread(target = self.nucleiFiles)
+        thread9 = Thread(target = self.aquatone_Ips)
 
         thread0.start()
         thread1.start()
@@ -99,6 +100,7 @@ class ProjectA():
         thread6.start()
         thread7.start()
         thread8.start()
+        thread9.start()
 
         thread0.join()
         thread1.join()
@@ -108,6 +110,7 @@ class ProjectA():
         thread6.join()
         thread7.join()
         thread8.join()
+        thread9.join()
 
 
 #Start timer
