@@ -13,7 +13,7 @@ def ffuf_dir(folder):
     for i in file:
         try:
             file_name = i.replace("https://","").replace("http://","")
-            os.system(f'ffuf -w {DIR_WORDLIST} -t {THREADS/2} -u {i}/FUZZ -of json -o {folder}/ffuf/{file_name}_dir.json')
+            os.system(f'ffuf -w {DIR_WORDLIST} -t {round(THREADS/2)} -u {i}/FUZZ -of json -o {folder}/ffuf/{file_name}_dir.json')
 
             ffuf_data = open(f"{folder}/ffuf/{file_name}_dir.json","r")
             ffuf_json = ffuf_data.read()
