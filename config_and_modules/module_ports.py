@@ -66,7 +66,7 @@ def brutespray(folder, ip_to_ports):
     for ip in sorted(ip_to_ports, key=socket.inet_aton):
         #brutespray
         try:
-            os.system(f"python ./Tools/brutespray/brutespray.py -t {THREADS/2} -f {folder}/{ip}/{ip}.gnmap -T 20 -o output/{PROJECT_NAME}/ips/{ip}/brutespray")
+            os.system(f"python ./Tools/brutespray/brutespray.py -t {round(THREADS/2)} -f {folder}/{ip}/{ip}.gnmap -T 20 -o output/{PROJECT_NAME}/ips/{ip}/brutespray")
         except Exception as error:
             print(f"{error}\nSomething went wrong.")
             config_and_modules.module_slack.error(error,"ports [brutespray()]")
