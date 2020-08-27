@@ -13,7 +13,7 @@ def ffuf_vhosts(folder):
     for i in file:
         try:
             file_name = i.replace("https://","").replace("http://","")
-            os.system(f'ffuf -w {VHOST_WORDLIST} -t {THREADS/2} -u {i} -H "Host: FUZZ" -of json -o {folder}/ffuf/{file_name}_vhost.json')
+            os.system(f'ffuf -w {VHOST_WORDLIST} -t {round(THREADS/2)} -u {i} -H "Host: FUZZ" -of json -o {folder}/ffuf/{file_name}_vhost.json')
 
             ffuf_data = open(f"{folder}/ffuf/{file_name}_vhost.json","r")
             ffuf_json = ffuf_data.read()
