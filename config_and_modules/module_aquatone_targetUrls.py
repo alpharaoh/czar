@@ -6,7 +6,7 @@ import config_and_modules.module_slack
 
 def aquatone_targetUrls(folder):
     try:
-        os.system(f"sudo cat {folder}/final_targetUrls.txt | aquatone -threads {THREADS/2} -out {folder}/aquatone/urls/")
+        os.system(f"sudo cat {folder}/final_targetUrls.txt | aquatone -threads {round(THREADS/2)} -out {folder}/aquatone/urls/")
     except Exception as error:
         print(f"{error}\nSomething went wrong.")
         config_and_modules.module_slack.error(error,"aquatone_targetUrls")
