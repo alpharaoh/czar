@@ -1,0 +1,32 @@
+https://github.com/projectdiscovery/subfinder/releases/download/v2.4.1/subfinder_2.4.1_linux_amd64.tar.gz
+tar -xzvf subfinder_2.4.1_linux_amd64.tar.gz
+
+https://github.com/OWASP/Amass/releases/download/v3.9.1/amass_linux_amd64.zip
+
+https://github.com/projectdiscovery/nuclei/releases/download/v2.1.0/nuclei_2.1.0_linux_amd64.tar.gz
+tar -xzvf nuclei_2.1.0_linux_amd64.tar.gz
+rm LICENSE.md
+rm README.md
+rm nuclei_2.1.0_linux_amd64.tar.gz
+sudo mv nuclei /usr/local/bin/
+
+httpx
+
+git clone https://github.com/allyomalley/LiveTargetsFinder.git
+sudo pip3 install -r requirements.txt
+chmod +x install_deps.sh
+./install_deps.sh
+
+wget https://github.com/ffuf/ffuf/releases/download/v1.1.0/ffuf_1.1.0_linux_amd64.tar.gz
+tar -xzvf ffuf_1.1.0_linux_amd64.tar.gz 
+rm LICENSE 
+rm CHANGELOG.md 
+rm README.md
+sudo mv ffuf /usr/local/bin/
+
+https://github.com/lc/gau/releases/download/v1.0.3/gau_1.0.3_linux_amd64.tar.gz
+tar xvf gau_1.0.3_linux_amd64.tar.gz
+rm LICENSE 
+rm README.md 
+mv gau /usr/local/bin
+rm gau_1.0.3_linux_amd64.tar.gz 
