@@ -11,7 +11,7 @@ class Subdomain_Enumeration():
     def Subfinder(self, folder):
         start_time = config_and_modules.module_timer.start_timer()
         try:
-            os.system(f"subfinder -silent -dL {TARGET_LIST} -config ./Tools/subfinder_config.yaml | tee {folder}/subdomain_enum/{PROJECT_NAME}_subfinder.txt")
+            os.system(f"subfinder -silent -d {MAINSCOPE} -config ./Tools/subfinder_config.yaml -all | tee {folder}/subdomain_enum/{PROJECT_NAME}_subfinder.txt")
         except Exception as error:
             print(f"Error: {error}\nDo you have subfinder installed correctly? Make sure it's in $PATH (/usr/local/bin)")
             config_and_modules.module_slack.error(error,"subdomains [Subfinder()]")
