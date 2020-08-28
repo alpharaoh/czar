@@ -20,6 +20,7 @@ def ports_andIps(lis,folder): #uses httpx to resolve the ips and ports
 
 def masscan(folder):
     import socket
+    import re
     try:
         start_time = config_and_modules.module_timer.start_timer()
         os.system(f"sudo mkdir {folder}")
