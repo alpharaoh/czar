@@ -1,0 +1,9 @@
+200 OK
+Cache-Control: no-cache, private no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+X-Xss-Protection: 1; mode=block
+Retry-Count: 0
+Server: nginx
+Date: Fri, 28 Aug 2020 15:03:12 GMT
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+X-Frame-Options: SAMEORIGIN
+Content-Type: text/html; charset=UTF-8

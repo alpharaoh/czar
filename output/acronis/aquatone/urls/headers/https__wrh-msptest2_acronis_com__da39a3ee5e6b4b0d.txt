@@ -1,0 +1,16 @@
+200 OK
+Date: Fri, 28 Aug 2020 15:03:23 GMT
+P3p: CP="ALL IND DSP COR ADM CONo CUR CUSo IVAo IVDo PSA PSD TAI TELo OUR SAMo CNT COM INT NAV ONL PHY PRE PUR UNI" CP="ALL IND DSP COR ADM CONo CUR CUSo IVAo IVDo PSA PSD TAI TELo OUR SAMo CNT COM INT NAV ONL PHY PRE PUR UNI"
+Strict-Transport-Security: max-age=31536000; includeSubDomains max-age=31536000; includeSubDomains
+Access-Control-Expose-Headers: ETag,Content-Length,Content-Type,Retry-After ETag,Content-Length,Content-Type,Retry-After
+Content-Type: text/html
+Vary: Accept-Encoding
+Cache-Control: no-cache,no-store,must-revalidate
+Access-Control-Allow-Credentials: true true
+Server: nginx
+Last-Modified: Sat, 26 Oct 1985 08:15:00 GMT
+Etag: W/"1dc09d84-23a"
+X-Frame-Options: DENY SAMEORIGIN SAMEORIGIN
+X-Content-Type-Options: nosniff nosniff
+Front-End-Https: on on
+Retry-Count: 0

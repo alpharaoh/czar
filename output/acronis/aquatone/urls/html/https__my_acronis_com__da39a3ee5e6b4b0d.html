@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Login to my.acronis.com</title>
+<meta name="robots" content="noindex" />
+<link href="/css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+function getElem(id){return document.getElementById ? document.getElementById(id) : document.all(id);}
+function keepHash()
+{
+	var bck = document.getElementById('bck');
+	if (!bck.value || !bck.value.match('#')) bck.value += window.location.hash;
+}
+</script>
+<style type="text/css">
+.error { color: red; margin-top: 10px; }
+input .error { background: #ffcccc; }
+.button { font-weight: bold;}
+.loginLogo  { position: absolute; top: 0px; left: 30px; }
+.loginBlock { position: relative; top: 1px; border: solid #c5d5f9 1px; padding: 5px 29px 20px 29px; width: 161px; margin: 0px auto;margin-top:176px; text-align: center; }
+#user, #password {margin-top: 12px; width:  150px; }
+#login_mode { margin-left: -5px; }
+.loginBlock .block {margin-top: 10px;}
+.loginBlock .button { width: 60px; }
+.loginBlock .submit { margin-top: 4px; }
+#rempswd {font-weight:normal;white-space:nowrap;}
+td.leftcolumn {padding-top:0}
+</style>
+</head>
+
+<body onload="var f=getElem(''.length ? 'password' : 'user'); if (f) f.focus();keepHash();">
+<table cellpadding="0" cellspacing="0"><tr><td class="leftcolumn logo">
+<div style="background-color:#1f42ad;height:6px"><img src="/i/0.gif" width="125" height="6" alt="." /></div>
+<div class="paddedtop"><a href="/">my.acronis.com</a></div>
+<div class="paddedtop"><a href="/"><img src="/img/logo-1.gif" width="125" height="67" alt="my.acronis.com" /></a></div>
+</td></tr></table>
+
+<form class="loginBlock" method="post" action="/index.html">
+<div>
+<input id="bck" type="hidden" name="-back" value="/" />
+<input type="hidden" id="gmt_offset" name="gmt_offset" />
+<input type="hidden" id="daysavetime" name="daysavetime" />
+</div>
+<script type="text/javascript">
+var rightNow = new Date();
+var daysave = -1;
+var d = new Date;
+document.getElementById('gmt_offset').value = -d.getTimezoneOffset()/60;
+//alert(document.getElementById('gmt_offset').value);
+/*
+   var date1 = new Date(rightNow.getFullYear(), 0, 1, 0, 0, 0, 0);
+   var date2 = new Date(rightNow.getFullYear(), 6, 1, 0, 0, 0, 0);
+   var temp = date1.toGMTString();
+   var date3 = new Date(temp.substring(0, temp.lastIndexOf(" ")-1));
+   var temp = date2.toGMTString();
+   var date4 = new Date(temp.substring(0, temp.lastIndexOf(" ")-1));
+   var hoursDiffStdTime = (date1 - date3) / (1000 * 60 * 60);
+   var hoursDiffDaylightTime = (date2 - date4) / (1000 * 60 * 60);
+   document.getElementById('gmt_offset').value = hoursDiffStdTime;
+//   alert(hoursDiffStdTime);
+   if (hoursDiffDaylightTime == hoursDiffStdTime) {
+	 daysave = 0;
+	 document.getElementById('daysavetime').value = 0;
+   } else {
+	 document.getElementById('daysavetime').value = 1;
+	 daysave = 1;
+   }
+*/
+	 document.getElementById('daysavetime').value = 1;
+</script>
+<p class="header">Login</p>
+<div><input placeholder="Login" type="text" id="user" name="user" value="" /></div>
+<div><input placeholder="Password" type="password" autocomplete="off" id="password" name="password" value="" /></div>
+<div class="block"><input type="checkbox" id="login_mode" name="login_mode" value="remember" checked="checked" />&nbsp;Remember me</div>
+<table border="0" width="100%" class="submit" cellpadding="0" cellspacing="0"><tr>
+<td valign="middle" align="right" style="padding-left:2px;">
+<input type="submit" value="Login" class="button" />
+</td>
+</tr></table>
+</form>
+
+</body></html>
+
+

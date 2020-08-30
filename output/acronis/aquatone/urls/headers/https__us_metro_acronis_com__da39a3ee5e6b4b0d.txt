@@ -1,0 +1,16 @@
+200 OK
+X-Content-Type-Options: nosniff
+Last-Modified: Thu, 27 Aug 2020 11:48:16 GMT
+Etag: W/"1598528896"
+X-Cache-Status: HIT
+Server: nginx
+Date: Fri, 28 Aug 2020 15:03:21 GMT
+Content-Type: text/html; charset=UTF-8
+X-Ua-Compatible: IE=edge
+Retry-Count: 0
+Vary: Accept-Encoding Cookie
+Cache-Control: max-age=8640000, public
+X-Generator: Drupal 8 (https://www.drupal.org)
+Link: <https://www.acronis.com/en-us/>; rel="shortlink", <https://www.acronis.com/en-us/>; rel="canonical"
+Content-Language: en-us
+Expires: Sun, 19 Nov 1978 05:00:00 GMT

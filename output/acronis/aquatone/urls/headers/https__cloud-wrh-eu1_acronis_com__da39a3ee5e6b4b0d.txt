@@ -1,0 +1,16 @@
+200 OK
+Retry-Count: 0
+X-Frame-Options: DENY SAMEORIGIN
+Last-Modified: Sat, 26 Oct 1985 08:15:00 GMT
+Cache-Control: no-cache,no-store,must-revalidate
+Access-Control-Allow-Credentials: true
+Access-Control-Expose-Headers: ETag,Content-Length,Content-Type,Retry-After
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Date: Fri, 28 Aug 2020 15:03:46 GMT
+X-Content-Type-Options: nosniff
+Front-End-Https: on
+Server: nginx
+Vary: Accept-Encoding
+Etag: W/"1dc09d84-23a"
+P3p: CP="ALL IND DSP COR ADM CONo CUR CUSo IVAo IVDo PSA PSD TAI TELo OUR SAMo CNT COM INT NAV ONL PHY PRE PUR UNI"
+Content-Type: text/html

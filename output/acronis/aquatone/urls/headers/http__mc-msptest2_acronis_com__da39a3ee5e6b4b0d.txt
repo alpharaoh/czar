@@ -1,0 +1,16 @@
+200 OK
+Server: nginx
+Content-Type: text/html
+Etag: W/"5e01c6ed-23a"
+X-Frame-Options: SAMEORIGIN
+X-Content-Type-Options: nosniff
+Date: Fri, 28 Aug 2020 14:41:22 GMT
+Cache-Control: no-cache
+Access-Control-Allow-Credentials: true
+Front-End-Https: on
+P3p: CP="ALL IND DSP COR ADM CONo CUR CUSo IVAo IVDo PSA PSD TAI TELo OUR SAMo CNT COM INT NAV ONL PHY PRE PUR UNI"
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Vary: Accept-Encoding
+Last-Modified: Tue, 24 Dec 2019 08:06:05 GMT
+Access-Control-Expose-Headers: ETag,Content-Length,Content-Type,Retry-After
+Retry-Count: 0

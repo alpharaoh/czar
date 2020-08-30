@@ -1,0 +1,365 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Acronis Cloud</title>
+	
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="Keywords" content="key" />
+<meta name="Description" content="description" />
+
+<link rel="SHORTCUT ICON" href="/images/favicon.ico?ver=11.0.50320" />
+
+	<link href="/css/reset.css?ver=11.0.50320" rel="stylesheet" type="text/css" media="screen" />
+	<link href="/css/login-page.css?ver=11.0.50320" rel="stylesheet" type="text/css" media="screen,projection" />
+
+	<script src="/js/jquery.min-1.7.1.js?ver=11.0.50320" type="text/javascript" ></script>
+	<script src="/js/jquery.placeholder.min.js?ver=11.0.50320" type="text/javascript" ></script>
+	<script src="/js/jquery.cookie.js?ver=11.0.50320" type="text/javascript" ></script>
+	<script src="/js/jquery.blockUI.js?ver=11.0.50320" type="text/javascript" ></script>
+	<script src="/js/clientinfo.js?ver=11.0.50320" type="text/javascript" ></script>
+	
+	<script type="text/javascript">
+	
+	
+	jQuery.fn.center = function() {
+		var parent = window;
+		this.css({
+			"position": "absolute",
+			"top": ((($(parent).height() - this.outerHeight()) / 2) + $(parent).scrollTop() + "px"),
+			"left": ((($(parent).width() - this.outerWidth()) / 2) + $(parent).scrollLeft() + "px"),
+			"margin-top": "-30px"
+		});
+		return this;
+	}
+	
+	
+	$(window).resize(function() {
+		$('.central-block').center();
+	});
+
+	
+	$(document).ready(function() {
+
+        updateClientInfo();
+
+	   $('.central-block').center();
+	   
+	   $("#js-email-input, #js-password-input").placeholder();   
+	   
+	   
+	   var browserVersion = parseFloat($.browser.version);
+	   var checkedIe = ($.browser.msie) && (browserVersion >= 8.0);
+	   var checkedFF = ($.browser.mozilla) && (browserVersion >= 1.9);//FF 3.5
+       var checkedWebkit = ($.browser.webkit);
+		
+		if (!checkedIe && !checkedFF && !checkedWebkit && !$.cookie('browserNotSupport')) {
+            $('#js-browser-ie-img').prepend('<img src="/images/login-page/browser-ie.png" alt="Internet Explorer" />');
+		    $('#js-browser-firefox-img').prepend('<img src="/images/login-page/browser-firefox.png" alt="Mozilla Firefox" />');
+		    $('#js-browser-chrome-img').prepend('<img src="/images/login-page/browser-chrome.png" alt="Google Chrome" />');
+		    $('#js-browser-safari-img').prepend('<img src="/images/login-page/browser-safari.png" alt="Safari" />');
+		
+			$(".js-central-block").hide();
+			$('.js-header-block').hide();
+			$(".js-browser-not-supported-box").show();
+		}
+
+		
+		$(".js-browser-not-supported-continue").on("click", function () {
+			$(".js-browser-not-supported-box").hide();
+			$(".js-central-block").slideDown("fast");
+			$('.js-header-block').show();
+			$.cookie('browserNotSupport', 'continue', {path: '/', expires: 365 });
+		});
+		
+		
+		$("#js-login-form-submit").on("click", function(event) {
+
+			event.stopPropagation();
+			event.preventDefault();	
+			
+var blockUIMessage = "<div class='b-popup__preloader'><div class='b-popup_content b-popup_content__simple'><span class='b-preloader'>Loading</span></div></div>";
+
+			var $blockUIMessage = $(blockUIMessage);
+			var $preloader = $blockUIMessage.find('.b-preloader');
+			
+			$.blockUI({ message: $blockUIMessage.get(0), bindEvents: false});
+		    
+		    
+			var error = "";
+			var emailText = $("#js-email-input").attr("value");
+            emailText = $.trim(emailText);
+			if(emailText == "" || emailText == "Your email"){
+				error = error + "Email required";
+			}
+			var pswrd = $("#js-password-input").attr("value");
+			if(pswrd == ""){
+				if(error != "") error = error + "<br />";
+				error = error + "Password required";
+			}
+			if(emailText != "" && emailText != "Your email" && !isValidEmailAddress(emailText)) {
+				if(error != "") error = error + "<br />";
+				error = error + "The email is not valid.";
+			}
+			if(error != ""){
+			    $error = $('#js-login-form-error-msg');
+			    $error.html(error);
+			    $error.addClass("error");
+				if (emailText !="" && pswrd =="") {
+				    $("#js-password-input").focus();
+				}
+				$.unblockUI();
+			} else {
+				
+				var date = new Date();
+				//For example, If your time zone is GMT+2, -120 will be returned.
+				var localOffset = date.getTimezoneOffset(); //minutes
+				$("#js-time-zone-offset").attr("value", localOffset);
+				
+				$("#js-email-input").val(emailText);
+				$("#js-login-form").submit();
+			}
+			return false;
+		});
+
+		var ENTER_KEY = 13;
+
+		$("#js-login-form").on("keypress", function(e) {
+			if (e.keyCode == ENTER_KEY) {
+				e.preventDefault();
+				$("#js-login-form-submit").click();
+			}
+		});
+
+		function isValidEmailAddress(email) {
+			var regEx = /^([A-Za-z0-9_\-\.\+])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,16})$/;
+			if (regEx.test(email)){
+				return true;
+			}
+			return false;
+		}
+
+        
+
+	});
+
+
+
+
+    /* checkboxes */
+	$(function() {
+    var cls_radio = 'b-radiobutton__checked',
+        cls_checkbox = 'b-checkbox__checked';
+
+		var $radio = $('input:radio[name="popup-cleanup-choose"]').live('change', function() {
+			$('input:radio[name="popup-cleanup-choose"]').each(function() {
+				var $aroundElem = $(this).parent();
+				if ($(this).is(':checked')) {
+					$aroundElem.addClass(cls_radio);
+				} else {
+					$aroundElem.removeClass(cls_radio);
+					$aroundElem.parent().removeClass("b-popup_choose_active");
+				}
+			});
+		});
+
+		var $checkbox = $('.b-checkbox input').live('change', function(e) {
+            if(!$(this.parentNode).hasClass('b-checkbox__disabled')) {
+                $(this.parentNode)[this.checked ? 'addClass' : 'removeClass'](cls_checkbox);
+            }
+			updateTableRowsSelection(this);
+        });
+
+		init($radio, cls_radio);
+		init($checkbox, cls_checkbox);
+		function init ($controls, cls) {
+			for (var i = $controls.length, el; i--;) {
+				el = $controls[i];
+				$(el.parentNode)[el.checked ? 'addClass' : 'removeClass'](cls);
+			}
+		}
+	});
+
+
+
+</script>
+</head>
+
+
+
+<body>
+    <div class="b-wrapper">
+
+		<div class="header-block js-header-block">
+			<table border="0" align="right" class="header-block__right-block">
+				<tr>
+					<td><a class="header-block__register-icon" href="https://www.acronis.com/my/profile/#registration" title='Create new account'></a></td>
+					<td class="header-block__link-cell"><a href="https://www.acronis.com/my/profile/#registration">Create new account</a></td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="central-block centered js-central-block">
+			<div class="central-block__logo">
+				<img src='/images/logos/login-logo.png' alt='Acronis Cloud'>
+			</div>
+	
+			<div class="central-block__login-form centered">
+
+	
+				<form id="js-login-form" name="loginForm" action="/enterprise/login/handleLoginForm.htm" method="POST">
+                
+					<p class="login-form__email-input-wrapper centered">
+                       		<input type="text" id="js-email-input" name="email" class="credentials-field"
+                       		title="Your email"
+                       		placeholder="Your email" 
+                       		value="" 
+                       		maxlength="255">
+                	</p>
+                
+					<p class="login-form__password-input-wrapper centered">
+                   		<input id="js-password-input" name="password" class="credentials-field"
+                        title="Password"
+                   		placeholder="Password" 
+                   		type="password" maxlength="255">
+                        
+                        <input id="js-time-zone-offset" name="timeZoneOffset" type="hidden" >
+						
+						<a class="forgot-password-link" 
+						href="http://www.acronis.com/my/remind/"
+						title="Forgot password?"
+						></a>
+                	</p>
+                
+					<p id="js-login-form-error-msg" class="login-form__sign-in-error">
+					</p>
+
+					<p class="centered">
+						<button id="js-login-form-submit" class="login-form__sign-in-button centered" type="submit">
+						<b><span>SIGN IN</span></b></button>
+                	</p>
+							
+					<p class="login-form__remember-me centered">				
+						<label class="b-checkbox">
+                        	<input type="checkbox" id="js-remember-me" class="login-form__remember-me-checkbox" name="rememberMe">Stay signed in
+                    	</label>
+					</p>			
+				
+            	</form>
+	
+			</div>
+		</div>
+
+
+
+
+		<div class="browser-not-supported-box centered js-browser-not-supported-box" style="display: none;">
+			<div class="browser-not-supported-box__logo">
+				<img src='/images/logos/login-logo.png' alt='Acronis Cloud'>
+			</div>
+	
+			<h1>The web application has not been tested<br/>on your current browser.</h1>
+			<p class="browser-not-supported-box__text">We suggest that you use one of these browsers:</p>
+			<ul class="browser-not-supported-box__browsers">	
+				<li><div id="js-browser-ie-img"></div>Internet Explorer 8<br/>or later</li>
+		    	<li><div id="js-browser-firefox-img"></div>Mozilla Firefox 3.5<br/>or later</li>
+		    	<li><div id="js-browser-chrome-img"></div>Google Chrome 10<br/>or later</li>
+		    	<li><div id="js-browser-safari-img"></div>Safari 5.0.5<br/>or later</li>                                                            
+			</ul>
+			<p class="browser-not-supported-box__continue-text">If you want to continue with your current browser, <a href="javascript:;" class="js-browser-not-supported-continue">click here</a></p>
+		</div>
+
+
+    
+    	<div class="footer-block">
+    		<div class="footer-block__social">
+				<ul>
+		    		<li><a class="acronis" href="http://www.acronis.com/" title="Acronis"></a></li>
+		    		<li><a class="twitter" href="https://go.acronis.com/twitter" title="Twitter"></a></li>
+					<li><a class="facebook" href="https://go.acronis.com/facebook" title="Facebook"></a></li>
+					<li><a class="youtube" href="https://go.acronis.com/youtube" title="YouTube"></a></li>
+				</ul>
+			</div>
+			<div class="footer-block__links">
+				<ul>
+					<li><a href="http://www.acronis.com/company/privacy.html">Privacy statement</a></li>
+					<li><a href="http://www.acronis.com/op/legal.html">Legal Notices</a></li>
+					<li>© 2002-2018  Acronis International GmbH, All rights reserved.<li>
+				</ul>
+			</div>
+		</div>
+    
+    
+    
+    </div>
+
+   <div id="icons-precaching">
+   		<ul>
+		    <li class="i1"></li>
+		    <li class="i2"></li>
+			<li class="i3"></li>
+			<li class="i4"></li>
+			<li class="i5"></li>
+			<li class="i6"></li>
+			<li class="i7"></li>
+			<li class="i8"></li>
+			<li class="i9"></li>
+			<li class="i10"></li>
+			<li class="i11"></li>
+			<li class="i12"></li>
+			<li class="i13"></li>
+			<li class="i14"></li>
+			<li class="i15"></li>
+			<li class="i16"></li>
+			<li class="i17"></li>
+			<li class="i18"></li>
+			<li class="i19"></li>
+			<li class="i20"></li>
+		</ul>
+   </div>
+
+    <noscript>
+        <div class="nojs-popup-screenmask"></div>
+        <div class="nojs-popup">
+            <h2 class="nojs-popup__title"><label>Please enable Javascript</label></h2>
+            <div class="nojs-popup__content">
+                <p>This webpage uses Javascript to display content. </p><p>Please enable Javascript in your browser and reload this page.</p>
+            </div>
+        </div>
+    </noscript>
+   
+   
+   
+   
+   <script>
+    var host = window.location.host;
+    if (host.indexOf('acronis.com') !== -1) {
+
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        if (host === 'cloud-wr-eu1.acronis.com') {
+            ga('create', 'UA-41017939-3', 'acronis.com');
+            ga('send', 'pageview');
+        } else if (host === 'cloud-wr-us1.acronis.com') {
+            ga('create', 'UA-41017939-1', 'acronis.com');
+            ga('send', 'pageview');
+        } else if (host === 'cloud-wr-us2.acronis.com') {
+            ga('create', 'UA-41017939-2', 'acronis.com');
+            ga('send', 'pageview');
+        } else if (host === 'cloud-wrh-preview1.acronis.com') {
+            ga('create', 'UA-41017939-5', 'acronis.com');
+            ga('send', 'pageview');
+        }
+    }
+</script>
+
+   
+   
+    
+</body>
+</html>

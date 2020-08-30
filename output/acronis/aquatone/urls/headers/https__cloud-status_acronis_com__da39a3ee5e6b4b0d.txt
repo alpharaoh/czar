@@ -1,0 +1,12 @@
+200 OK
+X-Xss-Protection: 1; mode=block
+Server: nginx
+Date: Fri, 28 Aug 2020 15:03:44 GMT
+X-Powered-By: PHP/7.2.25
+Cache-Control: private, must-revalidate
+Expires: -1
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+Content-Type: text/html; charset=UTF-8
+Retry-Count: 0
+Pragma: no-cache
+Set-Cookie: XSRF-TOKEN=eyJpdiI6ImkwdXBcL1FSYXR3NzZ4b1wvckVhd0Jqdz09IiwidmFsdWUiOiJpYm40dEM2b3l2d28rTEFPMkJvb0g3Sjl1ck5XNUpcL3hsTHlESE1yTEs5V2lhdXFvd1wvbUVrMGZHYzNlaWRmVU4iLCJtYWMiOiI3ZmNmMzMxMGYwZjY5YjljODRiMGM3YWRjZTNiNDAwYTA2Y2RjMmJkZDE0NTE2Nzc5OThkZmJhZWQ5MjMxNWQyIn0%3D; expires=Fri, 28-Aug-2020 16:57:06 GMT; Max-Age=7200; path=/ acronis_cloud_health_session=eyJpdiI6InhCXC8xZDluZXhNS0ZqMmZ2alloOG1RPT0iLCJ2YWx1ZSI6IkthQWZtczJ0ZXZSRWVZWjJFVWJONXNhalVqK3RlXC9VM3FHRlFCTGR1RnN6b24xWENrZWVcL0N2Qm9CQlV4XC83Vk4iLCJtYWMiOiI2MzdlYjg5OTQ3NjJhZTRhNDBmYTJjMWZiYWU2NGI2MjdmM2JmM2Q0YjFlZDY2ZmJiNzY3M2M1OWVmMWI4M2Q4In0%3D; expires=Fri, 28-Aug-2020 16:57:06 GMT; Max-Age=7200; path=/; httponly

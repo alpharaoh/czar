@@ -1,0 +1,11 @@
+200 OK
+X-Frame-Options: SAMEORIGIN
+X-Srv: ssl_admin/office.acronis.com
+Date: Fri, 28 Aug 2020 15:03:38 GMT
+Retry-Count: 0
+Expires: Mon, 26 Jul 1997 05:00:00 GMT
+Last-Modified: Fri, 28 Aug 2020 15:03:38 GMT
+Cache-Control: no-cache, must-revalidate
+Pragma: no-cache
+Server: nginx
+Content-Type: text/html; charset=utf-8

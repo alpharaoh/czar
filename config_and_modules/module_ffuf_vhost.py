@@ -13,7 +13,7 @@ def ffuf_vhosts(folder):
     for i in file:
         try:
             file_name = i.replace("https://","").replace("http://","")
-            os.system(f'ffuf -w {VHOST_WORDLIST} -t {THREADS/2} -u {i} -H "Host: FUZZ" -of json -o {folder}/ffuf/{file_name}_vhost.json')
+            os.system(f'ffuf -w {VHOST_WORDLIST} -t {round(THREADS/2)} -u {i} -H "Host: FUZZ" -of json -o {folder}/ffuf/{file_name}_vhost.json')
 
             ffuf_data = open(f"{folder}/ffuf/{file_name}_vhost.json","r")
             ffuf_json = ffuf_data.read()
@@ -24,16 +24,15 @@ def ffuf_vhosts(folder):
             const = 20
 
             for i in data["results"]:
-                length = len(i["host"])
+                length = len(i["input"]["FUZZ"])
                 seperate = const-length
                 if seperate < 0:
                     seperate = const
-                output.write(f'host: {i["host"][""]}{" " * seperate}| status: {i["status"]} | length: {i["length"]} | words: {i["words"]} | lines: {i["lines"]} |\n')
+                output.write(f'host: {i["input"]["FUZZ"]}{" " * seperate}| status: {i["status"]} | length: {i["length"]} | words: {i["words"]} | lines: {i["lines"]} |\n')
             
             os.system(f"sudo rm {folder}/ffuf/{file_name}_vhost.json")
         except Exception as error:
             print(f"{error}\nSomething went wrong.")
-            config_and_modules.module_slack.error(error,"ffuf_vhosts")
 
 if __name__ == "__main__":
     start_time = config_and_modules.module_timer.start_timer()

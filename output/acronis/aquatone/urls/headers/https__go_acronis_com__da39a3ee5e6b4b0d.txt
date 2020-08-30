@@ -1,0 +1,11 @@
+200 OK
+Expires: -1
+Set-Cookie: XSRF-TOKEN=eyJpdiI6Imw5UXBzakhGaW9sYnhXZmQ0TVM1XC9RPT0iLCJ2YWx1ZSI6IllFRW5rQ2k3Rzk0bFp4UkNadlRWRXJsb0xTZGVRSnBTOWwrSzRJdGdBQk9vS2F5K201MTcybXVZalppMmY1XC9JIiwibWFjIjoiMTZlM2QxNDY3NTdiN2RhZjIyYTRmZThkY2U3NWZlZjJlNmYxMjliOWJiMGI3N2VkYmJhYTkwZWE1ZWIwYzZkOSJ9; expires=Fri, 28-Aug-2020 16:57:22 GMT; Max-Age=7200; path=/; secure laravel_session=eyJpdiI6Im1GUHh0a3JvZTBhN0ZyUlwvVUlWV2J3PT0iLCJ2YWx1ZSI6IlIrM0tVMzBYRFpqbXZtVXBiNjFNRnkxTkpSMTBUclFvUXVONzZGb1hReXRtWlwvMDF5dmJKY1wvSXRtU3dYa1VTRyIsIm1hYyI6IjhjNDRkMDI4ZGI4OWJlNDdmN2VlOTRjZDU3YzBjOGNmYmIyZWUwYzNiNThlNGVkN2EyZGY4YjEwMGJlNWRiMWMifQ%3D%3D; expires=Fri, 28-Aug-2020 16:57:22 GMT; Max-Age=7200; path=/; secure; httponly
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+Date: Fri, 28 Aug 2020 15:03:59 GMT
+Retry-Count: 0
+Pragma: no-cache
+X-Xss-Protection: 1; mode=block
+Server: nginx
+Content-Type: text/html; charset=UTF-8
+Cache-Control: private, must-revalidate

@@ -7,10 +7,13 @@ import config_and_modules.module_slack
 def liveTargetFinder(folder):
     os.chdir("./Tools/livetargetsfinder/")
     try:
+        os.system("pwd")
         if NMAP_SCAN_IN_LIVETARGETSFIDER:
             os.system(f"sudo python3 liveTargetsFinder.py --target-list {folder}/final_Subdomains.txt --nmap")
+            os.system("pwd")
         else:
             os.system(f"sudo python3 liveTargetsFinder.py --target-list {folder}/final_Subdomains.txt")
+            os.system("pwd")
     except Exception as error:
         print(f'{error}\n Something went wrong. Check "NMAP_SCAN_IN_LIVETARGETSFIDER" in config.py')
         config_and_modules.module_slack.error(error,"liveTargetFinder")

@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <head>
+    <meta charset="utf-8">
+    <style type="text/css">
+      html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, del, img, b, ul, li {
+        border: 0;
+        font: inherit;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=latin,cyrillic-ext,cyrillic,latin-ext);
+      i {
+        font-style: normal;
+      }
+
+      ol {
+        margin-top: 50px;
+      }
+
+      ol li {
+        padding: 7px 0;
+        float: left;
+      }
+
+      ul {
+        margin-top: 30px;
+      }
+
+      ul li {
+        margin-bottom: 30px;
+      }
+
+      @font-face {
+        font-family: Acronis;
+        src: url(http://acronis.com/sites/all/themes/custom/acronis/ati-2016/fonts/acronis-light-webfont.ttf);
+        src: url(http://acronis.com/sites/all/themes/custom/acronis/ati-2016/fonts/acronis-light-webfont.woff);
+        src: url(http://acronis.com/sites/all/themes/custom/acronis/ati-2016/fonts/acronis-light-webfont.eot);
+      }
+
+      html {
+        height: 100%;
+      }
+
+      body {
+        font: 16px 'Open Sans', 'Arial', sans-serif;
+        margin: 0;
+        color: #6f7683;
+        background: #fff;
+        height: 100%;
+      }
+
+      a {
+        color: #4c93df;
+        text-decoration: underline;
+      }
+
+      a:hover {
+        text-decoration: none;
+      }
+
+      b {
+        font-weight: bold;
+      }
+
+      p {
+        margin: 30px 0;
+      }
+
+      a, a:hover, a:visited, a:link, a:focus {
+        outline: none !important;
+      }
+
+      h1, h2 {
+        font-size: 36px;
+        font-weight: lighter;
+        margin: 30px 0 20px;
+      }
+
+      h2 {
+        color: #4d94e0;
+        text-align: center;
+      }
+
+      h3 {
+        font-size: 24px;
+        line-height: 28px;
+      }
+
+      .container-page {
+        margin: 0px auto 0px;
+        overflow: hidden;
+        position: relative;
+        width: 960px;
+        padding-bottom: 20px;
+      }
+
+      h1.logo {
+        display: inline-block;
+        margin: 20px 0 0;
+      }
+
+      h1.logo a {
+        display: block;
+        text-indent: -9999px;
+        background: url('/i/promo/2015/affiliate-page/acronis_logotype.png') no-repeat;
+        width: 100px;
+        margin: 3px 0 0 0;
+        height: 25px;
+        float: left;
+      }
+
+      .header-logo-text {
+        display: block;
+        float: right;
+        font-size: 26px;
+        color: #0e3d78;
+        font-weight: 300;
+        padding-left: 5px;
+        font-family: Acronis;
+      }
+
+      .header {
+        background: url('/i/promo/2015/affiliate-page/header_blue_bg.png') no-repeat #e0ebfc;
+        background-size: cover;
+        width: 100%;
+        padding: 30px 0 0;
+      }
+
+      .header h1 {
+        color: #0e3d78;
+        line-height: 36px;
+        position: relative;
+        display: block;
+      }
+
+      .header-left-block {
+        float: left;
+        width: 50%;
+      }
+
+      .ATI2016-image {
+        position: relative;
+        right: 0;
+        float: right;
+      }
+
+      .content-descr {
+        display: block;
+        text-align: center;
+      }
+
+      .blue-block {
+        background: #dee9fa;
+      }
+
+      .footer {
+        background: #f1f2f4;
+        text-align: center;
+        padding: 30px 0 10px;
+        font-size: 12px;
+      }
+
+      .footer ul {
+        margin: 10px auto;
+      }
+
+      .footer ul li {
+        float: left;
+        padding: 0 7px;
+      }
+
+      /* buttons: */
+      .buttons-block {
+        clear: both;
+        max-width: 480px;
+        margin: 30px auto;
+      }
+
+      .buttons-block li {
+        width: 50%;
+        float: left;
+      }
+
+      .buttons-block-bottom li {
+        float: none;
+        margin: 0 auto;
+      }
+
+      .affi-btn {
+        text-transform: uppercase;
+        color: #fff;
+        display: block;
+        /*width: 210px;*/
+        padding: 7px 15px;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: bold;
+        margin-right: 10px;
+      }
+
+      .f-btn {
+        background: url('/i/promo/2015/affiliate-page/btn1.png') no-repeat 95% #9bc225;
+      }
+
+      .f-btn:hover {
+        background: url('/i/promo/2015/affiliate-page/btn1.png') no-repeat 95% #83ad00;
+      }
+
+      .s-btn {
+        background: url('/i/promo/2015/affiliate-page/btn2.png') no-repeat 95% #4d94e0;
+      }
+
+      .s-btn:hover {
+        background: url('/i/promo/2015/affiliate-page/btn2.png') no-repeat 95% #407bba;
+      }
+
+      /* END buttons: */
+      .list-affiliate, .long-list {
+        width: 100%;
+        font-size: 14px;
+      }
+
+      .list-affiliate h3 {
+        color: #414752;
+      }
+
+      .list-affiliate li {
+        float: left;
+        width: 30%;
+        margin-right: 3%;
+      }
+
+      .circle123 span {
+        padding-left: 60px;
+        display: block;
+        margin-top: 7px;
+      }
+
+      .circle123 h3:before {
+        content: "1";
+        border: 2px solid #4d94e0;
+        border-radius: 25px;
+        padding: 2px 14px;
+        color: #4d94e0;
+        margin-right: 10px;
+        position: relative;
+        top: 15px;
+        font-size: 32px;
+      }
+
+      .circle123 li:nth-child(1) h3:before {
+        content: "1";
+      }
+
+      .circle123 li:nth-child(2) h3:before {
+        content: "2";
+      }
+
+      .circle123 li:nth-child(3) h3:before {
+        content: "3";
+      }
+
+      .long-list > div {
+        float: left;
+        width: 20%;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .long-list > div > div {
+        background: url('/i/promo/2015/affiliate-page/why_acronis_reasons.png') no-repeat;
+        width: 100px;
+        height: 100px;
+        margin: 0 auto 10px;
+      }
+
+      .long-list span {
+        font-size: 20px;
+        line-height: 23px;
+      }
+
+      .long-list div:nth-child(1) div {
+        background-position: 0 0;
+      }
+
+      .long-list div:nth-child(2) div {
+        background-position: -110px 0;
+      }
+
+      .long-list div:nth-child(3) div {
+        background-position: -220px 0;
+      }
+
+      .long-list div:nth-child(4) div {
+        background-position: -330px 0;
+      }
+
+      .long-list div:nth-child(5) div {
+        background-position: -440px 0;
+      }
+
+      .f-list-aff, .s-list-aff, .th-list-aff {
+        background: url('/i/promo/2015/affiliate-page/all_tabs.png') no-repeat;
+        padding-left: 70px;
+        min-height: 60px;
+        margin-bottom: 10px;
+      }
+
+      .f-list-aff {
+        background-position: 0 0;
+      }
+
+      .s-list-aff {
+        background-position: 0 -70px;
+      }
+
+      .th-list-aff {
+        background-position: 0 -140px;
+      }
+
+      /* for mobile phone styles: */
+      @media only screen and (max-width: 320px) {
+        body {
+          /*background: blue;*/
+        }
+
+        a {
+          text-decoration: none;
+        }
+
+        h1, h2 {
+          font-size: 32px;
+          text-align: center;
+          line-height: 30px;
+        }
+
+        h1.logo {
+          margin: 0;
+        }
+
+        h1.logo a {
+          width: 85px;
+          background-size: contain;
+        }
+
+        .container-page {
+          padding: 10px;
+          width: auto;
+        }
+
+        .header-logo-text {
+          font-size: 23px;
+          padding-left: 5px;
+        }
+
+        .header {
+          padding: 20px 0;
+          background: url('/i/promo/2015/affiliate-page/header_blue_bg_mobile.png') no-repeat #e0ebfc;
+          background-size: cover;
+        }
+
+        .header h1 {
+          line-height: 30px;
+          font-size: 24px;
+        }
+
+        .ATI2016-image, .header-left-block {
+          float: none;
+          width: 100%;
+        }
+
+        .ATI2016-image img {
+          width: 100%;
+        }
+
+        .affi-btn {
+          margin: 0 23px;
+        }
+
+        .buttons-block li, .list-affiliate li {
+          float: none;
+          width: 100%;
+          padding: 5px;
+        }
+
+        ul li {
+          margin-bottom: 5px;
+        }
+
+        .buttons-block {
+          margin: 10px auto;
+        }
+
+        .long-list > div {
+          width: 50%;
+        }
+
+        .long-list > div:last-child {
+          width: 100%;
+        }
+
+        .all_rights {
+          display: block;
+        }
+
+        .footer {
+          padding: 20px 0;
+        }
+      }
+    </style>
+    <script src="//www.acronis.com/js/jquery-1.7.2.min.js"></script>
+    <script src="//www.acronis.com/en-us/js/salesforce/partners/init.js"></script>
+  </head>
+<body>
+<header>
+  <div class="container-page"><h1 class="logo"><a href="/">Acronis</a> <span class="header-logo-text">Affiliate Program</span></h1></div>
+  <div class="header">
+    <div class="container-page">
+      <div class="ATI2016-image"><img src="/i/promo/2015/affiliate-page/brand_lp_bg_ic.png"/></div>
+      <div class="header-left-block"><h1>Competitive commissions, wide range of products, reputable well-known brand... sign up today!</h1>
+        <ul class="buttons-block">
+          <li><a class="affi-btn s-btn" href="https://signup.cj.com/member/brandedPublisherSignUp.do?air_refmerchantid=1596784">Sign up via<br> commission Junction</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="container-page"><h2>Benefits of Acronis Affiliate Program</h2><span class="content-descr">The Acronis affiliate program is simple, free and easy to join.<br> Click Sign Up to get started immediately!</span>
+  <ul class="list-affiliate">
+    <li><h3 class="f-list-aff">Competitive Tiered Commission</h3><span>Base commission of 15% with a sliding scale of up to 50% depending on your sales amount. Sell more, make more! We pay regularly and always on time.</span></li>
+    <li><h3 class="s-list-aff">Top Selling Products</h3><span>With a wide selection of globally available consumer and corporate products, Acronis makes it easy for you to convert customers and reap the commission rewards--no matter where you or your customers are! Be sure to check out the entire list of available products. Seasonal promotions and top-affiliate coupons and discounts make it even easier to sell.</span>
+    </li>
+    <li><h3 class="th-list-aff">Assistance and Expert Advice</h3><span>The Acronis affiliate team is committed to helping you succeed! If you have any questions on getting started, <a href="mailto:affiliates@acronis.com">reach out to us</a>, or if you want to brainstorm for ideas on how to drive additional traffic or convert customers, we're here to help. We have expert team members with many years in the affiliate industry who are here to assist.</span>
+    </li>
+  </ul>
+</div>
+<div class="blue-block">
+  <div class="container-page"><h2>Why choose Acronis</h2>
+    <div class="long-list">
+      <div>
+        <div></div>
+        <span>Over 5 million<br> customers</span></div>
+      <div>
+        <div></div>
+        <span>Big name<br> clients</span></div>
+      <div>
+        <div></div>
+        <span>Multiple<br> Awards</span></div>
+      <div>
+        <div></div>
+        <span>Wide range of<br> products</span></div>
+      <div>
+        <div></div>
+        <span>Prompt<br> support</span></div>
+    </div>
+  </div>
+</div>
+<div class="container-page"><h2>How to become an affiliate</h2>
+  <ul class="list-affiliate circle123">
+    <li><h3>Sign up</h3><span>Sign up for the Commission Junction network!</span></li>
+    <li><h3>Get materials</h3><span>When approved as an Acronis Affiliate, you can access all the marketing materials stored for you in your account. They will all direct your users to Acronis Website.</span></li>
+    <li><h3>Start earning</h3>
+      <span>Place the banners, links or other materials in your website and earn from each sale that occurs on a click-through.<br><a href="mailto:affiliates@acronis.com">Contact us with questions!</a></span></li>
+  </ul>
+  <ul class="buttons-block buttons-block-bottom">
+    <li><a class="affi-btn s-btn" href="https://signup.cj.com/member/brandedPublisherSignUp.do?air_refmerchantid=1596784">Sign up via<br> commission Junction</a></li>
+  </ul>
+</div>
+<div class="footer">
+  <div class="container-page"><span>&#64; 2003&ndash;2019 Acronis International GmbH. <span class="all_rights">All rights reserved.</span></span>
+    <div><a href="http://www.acronis.com/company/privacy.html">Privacy Statement</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.acronis.com/legal.html">Legal Notices</a></div>
+  </div>
+</div>
+<script>
+    (function () {
+        var siteCopy = document.querySelector('.footer .container-page span');
+        var siteYear = siteCopy.innerText.match(/\d{4}\–(\d{4})/)[1];
+        var currYear = new Date().getFullYear().toString();
+        if(siteYear === currYear) return;
+        siteCopy.innerText = siteCopy.innerText.replace(siteYear, currYear);
+    })();
+</script>
+</body>
+</html>

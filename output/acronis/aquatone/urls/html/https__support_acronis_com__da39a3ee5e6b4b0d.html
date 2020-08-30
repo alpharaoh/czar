@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Support Portal</title>
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,700">
+
+    <!-- Styles -->
+    <link href="/build/css/element-ui.css" rel="stylesheet">
+    <link href="/build/css/simplemde.min.css" rel="stylesheet">
+    <link href="/build/css/app-2fede59c4f.css" rel="stylesheet">
+
+    <!--[if lt IE 8]>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" href="/acrologo-144x144.png" type="image/png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/acrologo-144x144.png">
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+            var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PFG6ZF');</script>
+    <!-- End Google Tag Manager -->
+</head>
+<body id="app-layout" class="bg-faded">
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PFG6ZF" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="p-y-3 centered">
+        <div id="locale-switcher">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="alert alert-info locale-switcher" role="alert">
+                    <span class="align-middle fa fa-info-circle fa-lg"></span>
+                    <span>
+                        We also provide support in: <a class="alert-link" href="/action/set-locale/de-de">Deutsch</a>
+    <a class="alert-link" href="/action/set-locale/es-es">Español</a>
+    <a class="alert-link" href="/action/set-locale/fr-fr">Français</a>
+    <a class="alert-link" href="/action/set-locale/it-it">Italiano</a>
+    <a class="alert-link" href="/action/set-locale/ja-jp">日本語</a>
+
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>    <div id="alerts">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <vue-support-alerts></vue-support-alerts>
+            </div>
+        </div>
+    </div>
+</div>    <div class="container m-t-1 support-categories">
+        <h1 class="text-xs-center m-b-3">Select category</h1>
+        <div class="row text-xs-center" id="cookie">
+            <div class="col-lg-6">
+                <a class="card card-block p-y-3"
+                   href="/technical-issue"
+                   role="button"
+                   @click="setCookie({'issueType': 'Technical'})">
+                    <i class="fa fa-cogs fa-5x" aria-hidden="true"></i>
+                    <h2 class="h4 m-t-1">Technical assistance</h2>
+                    <span class="h6 text-muted">Acronis&nbsp;True&nbsp;Image, Acronis&nbsp;Disk&nbsp;Director, Acronis&nbsp;Cyber&nbsp;Backup, Acronis&nbsp;Snap&nbsp;Deploy</span>
+                </a>
+            </div>
+            <div class="col-lg-6">
+                <a class="card card-block p-y-3"
+                   href="/support-options"
+                   role="button"
+                   @click="setCookie({'issueType': 'Customer Care', 'projectName': '', 'serialNumber': ''})">
+                    <i class="fa fa-question-circle fa-5x" aria-hidden="true"></i>
+                    <h2 class="h4 m-t-1">Trial / Activation / Pre-sales / Privacy / Licensing question</h2>
+                </a>
+            </div>
+        </div>
+        <div class="row text-xs-center" id="cookie">
+            <div class="col-lg-6">
+                <a class="card card-block p-y-3"
+                   href="/mobility"
+                   target="_parent"
+                   role="button">
+                    <i class="icon-mobility fa-5x" aria-hidden="true"></i>
+                    <h2 class="h4 m-t-1">Support for Access products</h2>
+                    <span class="h6 text-muted">Acronis&nbsp;Cyber&nbspFiles, Acronis&nbsp;Files&nbsp;Connect</span>
+                </a>
+            </div>
+            <div class="col-lg-6">
+                <a class="card card-block p-y-3"
+                   href="/msp"
+                   role="button">
+                    <i class="icon-providers fa-5x" aria-hidden="true"></i>
+                    <h2 class="h4 m-t-1">Support for Service Providers</h2>
+                    <span class="h6 text-muted">Acronis&nbsp;Сyber&nbsp;Cloud, Acronis&nbsp;Backup&nbsp;Cloud, Acronis Cyber Infrastructure, Acronis&nbsp;Backup&nbsp;SPLA</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScripts -->
+<script>window.Laravel = {
+    csrfToken: "5WnKPes0u0NA9Uc0LDf8LnxHCVbAPanYum2QGVCI",
+    env: "production"
+};</script>
+<script src="/build/js/app-ae4280e371.js"></script>
+<script async
+        src="https://www.acronis.com/en-us/js/crosssys/asm-d7-d8.js?apl9KYWh"></script>
+</body>
+</html>

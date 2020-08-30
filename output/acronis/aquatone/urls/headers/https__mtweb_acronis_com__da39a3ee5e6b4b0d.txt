@@ -1,0 +1,11 @@
+200 OK
+Server: Microsoft-IIS/10.0
+X-Frame-Options: SAMEORIGIN
+Retry-Count: 0
+Cache-Control: no-store, no-cache, must-revalidate, max-age=0,post-check=0, pre-check=0
+Expires: Mon, 26 Jul 1997 05:00:00 GMT
+Last-Modified: Fri, 28 Aug 2020 15:03:13 GMT
+Content-Length: 4853
+Content-Type: text/html; charset=UTF-8
+Set-Cookie: PHPSESSID=vin2r95cobk872hh6jvfar3eba; path=/; HttpOnly; SameSite=lax cookies_enabled=1
+Date: Fri, 28 Aug 2020 15:03:13 GMT

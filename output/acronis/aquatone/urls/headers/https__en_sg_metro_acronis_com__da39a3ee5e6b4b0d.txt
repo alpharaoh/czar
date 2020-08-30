@@ -1,0 +1,16 @@
+200 OK
+X-Generator: Drupal 8 (https://www.drupal.org)
+Cache-Control: max-age=8640000, public
+X-Content-Type-Options: nosniff
+Last-Modified: Thu, 27 Aug 2020 12:04:23 GMT
+Etag: W/"1598529863"
+X-Cache-Status: HIT
+Date: Fri, 28 Aug 2020 15:03:56 GMT
+Retry-Count: 0
+Vary: Accept-Encoding Cookie
+Expires: Sun, 19 Nov 1978 05:00:00 GMT
+Content-Type: text/html; charset=UTF-8
+Link: <https://www.acronis.com/en-sg/>; rel="shortlink", <https://www.acronis.com/en-sg/>; rel="canonical"
+Content-Language: en-sg
+Server: nginx
+X-Ua-Compatible: IE=edge

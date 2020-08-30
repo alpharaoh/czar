@@ -1,0 +1,9 @@
+404 Not Found
+X-Powered-By: PHP/7.4.8
+Retry-Count: 0
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+Cache-Control: no-cache, private
+X-Xss-Protection: 1; mode=block
+Server: nginx
+Date: Fri, 28 Aug 2020 15:03:14 GMT
+Content-Type: text/html; charset=UTF-8

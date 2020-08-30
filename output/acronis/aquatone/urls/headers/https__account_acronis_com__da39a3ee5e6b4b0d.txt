@@ -1,0 +1,16 @@
+200 OK
+Content-Security-Policy: default-src 'none'; style-src 'self'; script-src 'self' 'unsafe-eval' 'sha256-+rMbrN42W52Azks87jXlSMiQstiBmYQBk2LZBm+TWVU=' 'sha256-JqXWRhC4VFdCYgRJ2eYAXgqtbc4tb3E0eY8RmVW+l9s=' https://j.6sc.co https://www.googletagmanager.com https://www.google-analytics.com; img-src 'self' https://b.6sc.co https://adservice.google.com https://ad.doubleclick.net https://www.google.com https://www.google-analytics.com https://googleads.g.doubleclick.net; connect-src 'self' https://www.acronis.com https://www.google.com https://www.google-analytics.com https://googleads.g.doubleclick.net; font-src 'self' data:; frame-src https://www.acronis.com https://support.acronis.com; frame-ancestors 'none'
+Access-Control-Allow-Credentials: false
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+X-Content-Type-Options: nosniff
+Last-Modified: Fri, 21 Aug 2020 13:06:00 GMT
+Etag: W/"5f3fc6b8-940"
+X-Xss-Protection: 1; mode=block
+P3p: CP=IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT
+Server: nginx
+Retry-Count: 0
+Access-Control-Allow-Headers: Content-type, Accept, Authorization, X-XSRF-Token
+X-Frame-Options: SAMEORIGIN
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+Date: Fri, 28 Aug 2020 15:03:38 GMT
+Content-Type: text/html

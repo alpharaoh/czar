@@ -1,0 +1,2 @@
+ffuf -w /root/ProjectA/Tools/vhosts.txt -t 10 -u https://baas-fes-eu4.acronis.com -H Host: FUZZ -of json -o /root/ProjectA/output//acronis/ffuf/baas-fes-eu4.acronis.com_vhost.json
+

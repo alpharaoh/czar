@@ -1,0 +1,11 @@
+200 OK
+Connection: Close
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Retry-Count: 0
+Cache-Control: no-store
+Pragma: no-cache
+X-Content-Type-Options: nosniff
+X-Xss-Protection: 1
+Content-Security-Policy: default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob:; frame-ancestors 'self'
+Content-Length: 100
+Date: Fri, 28 Aug 2020 15:03:17 GMT

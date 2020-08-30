@@ -1,0 +1,14 @@
+200 OK
+Date: Fri, 28 Aug 2020 14:41:22 GMT
+Server: Apache-Coyote/1.1
+X-Content-Type-Options: nosniff
+Strict-Transport-Security: max-age=31536000; includeSubDomains;
+Etag: W/"ebe6a252447bd4e41be8bee4144ddc71"
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: 405b965d-a247-4c83-bcf8-2f31f01a82cd
+X-Runtime: 0.188394
+Content-Type: text/html;charset=utf-8
+X-Frame-Options: SAMEORIGIN
+X-Xss-Protection: 1; mode=block
+Set-Cookie: rest_access_token=a5bAzYDQQWRUtue7mQMQSDwdk3DeVDz%2Fh%2B3jNa820ow8nDSBp%2FwXb8gh%2FrGyf0DI84wyhZvg5fqslsCcWToXWg%3D%3D; path=/; secure; SameSite=Lax
+Retry-Count: 0

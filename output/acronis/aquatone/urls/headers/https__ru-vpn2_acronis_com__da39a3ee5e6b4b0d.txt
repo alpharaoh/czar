@@ -1,0 +1,13 @@
+200 OK
+Pragma: no-cache
+X-Frame-Options: SAMEORIGIN
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Content-Security-Policy: default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob:; frame-ancestors 'self'
+Retry-Count: 0
+Content-Type: text/html; charset=utf-8
+Set-Cookie: webvpn=; expires=Thu, 01 Jan 1970 22:00:00 GMT; path=/; secure webvpn_as=; expires=Thu, 01 Jan 1970 22:00:00 GMT; path=/; secure webvpnc=; expires=Thu, 01 Jan 1970 22:00:00 GMT; path=/; secure webvpn_portal=; expires=Thu, 01 Jan 1970 22:00:00 GMT; path=/; secure webvpnSharePoint=; expires=Thu, 01 Jan 1970 22:00:00 GMT; path=/; secure samlPreauthSessionHash=; expires=Thu, 01 Jan 1970 22:00:00 GMT; path=/; secure acSamlv2Token=; expires=Thu, 01 Jan 1970 22:00:00 GMT; path=/; secure acSamlv2Error=; expires=Thu, 01 Jan 1970 22:00:00 GMT; path=/; secure webvpnlogin=1; path=/; secure
+Cache-Control: no-store
+Connection: Keep-Alive
+Date: Fri, 28 Aug 2020 15:03:16 GMT
+X-Xss-Protection: 1
+X-Content-Type-Options: nosniff

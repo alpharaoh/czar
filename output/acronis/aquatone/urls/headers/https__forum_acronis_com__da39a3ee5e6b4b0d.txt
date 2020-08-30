@@ -1,0 +1,20 @@
+200 OK
+X-Frame-Options: SAMEORIGIN SAMEORIGIN
+Expires: Sun, 19 Nov 1978 05:00:00 GMT
+Retry-Count: 0
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+X-Drupal-Dynamic-Cache: MISS
+Content-Language: en
+Vary: Cookie
+X-Drupal-Cache: HIT
+X-Xss-Protection: 1; mode=block
+Server: nginx
+Content-Type: text/html; charset=UTF-8
+X-Ua-Compatible: IE=edge
+X-Content-Type-Options: nosniff
+Etag: W/"1598626016"
+X-Generator: Drupal 8 (https://www.drupal.org)
+Date: Fri, 28 Aug 2020 15:03:58 GMT
+Cache-Control: max-age=900, public
+Link: <https://forum.acronis.com/>; rel="shortlink", <https://forum.acronis.com/>; rel="canonical"
+Last-Modified: Fri, 28 Aug 2020 14:46:56 GMT

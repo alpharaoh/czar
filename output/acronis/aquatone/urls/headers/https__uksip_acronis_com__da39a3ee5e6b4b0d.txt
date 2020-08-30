@@ -1,0 +1,7 @@
+404 Not Found
+Server: RTC/6.0
+X-Ms-Server-Fqdn: uk-lync-edge-1.corp.acronis.com
+Retry-Count: 0
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Content-Type: text/plain
+Content-Length: 79

@@ -1,0 +1,1077 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><script type="text/javascript" src="https://cdn.cookielaw.org/consent/c570eb43-1169-4222-914c-38a09bd70ca0/OtAutoBlock.js"></script>
+<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" data-document-language="true" type="text/javascript" charset="UTF-8" data-domain-script="c570eb43-1169-4222-914c-38a09bd70ca0"></script>
+<script type="text/javascript">
+function OptanonWrapper() {window.dataLayer.push({event:'OneTrustGroupsUpdated'});}
+</script>
+<script src="//cdn.optimizely.com/js/627870150.js"></script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+(function(d,w) {
+function decodeURIComponentWithEscape( str ) {
+var out = '', arr, i = 0, l, x;
+arr = str.split(/(%(?:D0|D1)%.{2})/);
+for ( l = arr.length; i < l; i++ ) {
+try {
+x = decodeURIComponent( arr[i] );
+} catch (e) {
+x = arr[i];
+}
+out += x;
+}
+return out
+}
+w.kharkiv_init = {
+'ua': 'UA-149943-47',
+'ga_domain': 'www.acronis.com/en-gb'.replace('www.', '').replace(/\/.*/, ''),
+'locale': (/^\/(\w\w-\w\w)\/?/.exec(location.pathname) || ['',''])[1],
+'page_category': 'other_pages',
+getTimeStamp: function(round) {
+var ts = new Date().getTime().toString(); 
+round == 's' && (ts = ts.replace(/\d{3}$/i, ''));
+return ts;
+},
+'args': (function() {
+var get_params = document.location.search.replace(/^\?/, '').split('&'),
+i = get_params.length, params = {};
+while(i--) {
+if (!get_params[i].length) continue;
+var param = get_params[i].split('='), key = param[0], val = param[1] || '';
+params[key] = decodeURIComponentWithEscape(val.replace(/\+/g, ' '));
+}
+return params;
+})()
+};
+window.onerror = function(msg) { 
+if (/kharkiv|_gaq/.test(msg)) {
+ga('send', 'event', { 'eventCategory': 'error', 'eventAction': ['url: ', location.href, ' msg: ', msg].join('') });
+}
+};
+})(document, window); 
+</script>
+<script>(function(w, callback){
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+'events': 1,
+'pageview': 0,
+});
+if (/resource-center/.test(location.href)) {
+window.addEventListener('load', function() {
+var pageResource = window.Drupal && window.Drupal.settings && window.Drupal.settings.resource ? Drupal.settings.resource : 0;
+window.dataLayer.push({
+'event': 'Acronis',
+'eventCategory': 'show',
+'eventAction': 'ResourceCenter',
+'dimension40' : pageResource && pageResource.id ? pageResource.id : '(not set)',
+'dimension41' : pageResource && pageResource.type ? pageResource.type : '(not set)',
+'dimension42' : pageResource && pageResource.category ? pageResource.category : '(not set)',
+'dimension43' : pageResource && pageResource.featured ? pageResource.featured : '(not set)',
+'dimension128': pageResource && pageResource.products ? pageResource.products : '(not set)',
+});
+},false);
+}
+w.kharkiv = {
+'ua': kharkiv_init['ua'],
+'ga_domain': kharkiv_init['ga_domain'],
+'page_category': kharkiv_init['page_category'],
+'hostname': location['hostname'],
+'referrer': document.referrer.replace(/^http:\/\//i, '') || 'false',
+getHash: function() {
+return location.hash;
+},
+'hisoryhash': '',
+'search': location.search.replace(/^\?/, '').split('&').join('|') || 'false',
+'pathname': location.pathname.replace('index.html', ''),
+getPageView: function() {
+return [
+kharkiv['pathname'],
+kharkiv.getHash()
+].join('');
+},
+getPagePath: function() {
+return [
+kharkiv['hostname'],
+kharkiv['pathname'], 
+kharkiv.getHash()
+].join('');
+},
+'third_party': (function() {
+var category_hash = {
+'padati': 'cm:referral, cn:ati, cc:padfile',
+'padavmp': 'cm:referral, cn:avmp, cc:padfile',
+'fb': 'cm:third_party, cs:facebook',
+'afd': 'cm:third_party, cs:afterdownload, cn:ati',
+'winstore': 'cm:store, cs:windows, cn:ati'
+}, out = category_hash[kharkiv_init['args'].third_party] || false;
+if (!out) {
+var hash = { 
+},
+arr = document.referrer.replace('http://', '').split('/'),
+arr_len = arr.length;
+if (!arr_len) return;
+for (var i = 0; i < arr_len; i++) {
+var url = 'http://' + arr.join('/'),
+bingo = hash[url] || hash[url + '/'];
+if (bingo) {
+out = bingo;
+continue;
+}
+arr.pop();
+} 
+}
+var sources = out;
+if (!sources) return {};
+var sources_arr = sources.split(','), 
+temp_arr = [], third_party_obj = {};
+for (var i = 0; i < sources_arr.length; i++) {
+temp_arr = sources_arr[i].split(':');
+temp_arr[0] = temp_arr[0].replace(/^\s+|\s+$/g, '');
+switch (temp_arr[0]) {
+case 'cm':
+temp_arr[0] = 'campaignMedium';
+break;
+case 'cs':
+temp_arr[0] = 'campaignSource';
+break;
+case 'cn': 
+temp_arr[0] = 'campaignName';
+break;
+case 'cc': 
+temp_arr[0] = 'campaignContent';
+break;
+case 'ck': 
+temp_arr[0] = 'campaignKeyword';
+break; 
+case 'ci': 
+temp_arr[0] = 'campaignId';
+break;
+}
+third_party_obj[temp_arr[0]] = temp_arr[1];
+}
+return third_party_obj;
+})(),
+'options': {
+'allowLinker': true
+},
+'user': {
+getUID: function() {
+var cookie = ' ' + document.cookie,
+search = ' AcronisUID.en_uk=',
+str = null,
+offset = 0,
+end = 0;
+if (cookie.length > 0) {
+offset = cookie.indexOf(search);
+if (offset != -1) {
+offset += search.length;
+end = cookie.indexOf(";", offset)
+if (end == -1) end = cookie.length;
+str = unescape(cookie.substring(offset, end));
+}
+}
+return (str);
+},
+getCIDname: function() {
+return 'x-utm_cID'; 
+},
+getCIDval: function() {
+var cid = '';
+ga(function(tracker) {
+cid = tracker.get('clientId');
+}); 
+return cid; 
+}, 
+getLinkerName: function() {
+var linker_name = '';
+ga(function(tracker) {
+linker_name = tracker.get('linkerParam').split('=')[0];
+}); 
+return linker_name;
+},
+getLinkerVal: function() {
+var linker_val = '';
+ga(function(tracker) {
+linker_val = tracker.get('linkerParam').split('=')[1];
+}); 
+return linker_val;
+}
+},
+pushSet: function(extend, callback) {
+var extend = extend || {};
+ga(function(tracker) {
+var tracker = tracker;
+tracker.set(extend);
+});
+if (callback) callback();
+},
+sendPageView: function(ref_w_hash) {
+if (ref_w_hash) kharkiv['referrer'] = ref_w_hash;
+ga(function(tracker) {
+var uid = kharkiv['user'].getUID();
+if (!!uid) tracker.set({'&uid': uid});
+var locale = '';
+if (kharkiv_init['locale']) {
+locale = '/' + kharkiv_init['locale'];
+}
+tracker.set({
+'anonymizeIp': true,
+'dimension1': kharkiv['user'].getCIDval(),
+'dimension2': kharkiv['page_category'].replace(/\s*%no_get%/i, ''),
+'dimension3': kharkiv.getPagePath(),
+'dimension4': /%40|@/.test(kharkiv['search']) || !kharkiv['search'] ? 'false' : kharkiv['search'],
+'dimension5': kharkiv['referrer'],
+'dimension6': [kharkiv_init['ga_domain'], locale].join('')
+}); 
+}); 
+},
+sendEvent: function(category, action, label, value) {
+if (!category || !action) return;
+ga('set', 'dimension8', kharkiv_init.getTimeStamp('s'));
+ga('send', 'event', {
+'eventCategory': category,
+'eventAction': action,
+'eventLabel': label,
+'eventValue': value
+}); 
+}
+}; 
+if (callback) callback();
+})(window, function() {
+ga('create', 
+kharkiv['ua'], 
+kharkiv['ga_domain'], 
+kharkiv['options']
+);
+window.optimizely = window.optimizely || [];
+window.optimizely.push("activateUniversalAnalytics"); 
+try {
+var current_page = /^\/\w\w-\w\w(\/.+)?/.exec(location.pathname)[1];
+switch(current_page){
+case "/homecomputing/thanks/ati-for-pc/":
+case "/homecomputing/thanks/ati-for-mac/":
+case "/homecomputing/thanks/ati-for-pc-and-mac/":
+case "/homecomputing/thanks/ati-unlimited/":
+case "/homecomputing/thanks/ati-local/":
+case "/homecomputing/thanks/ati-local-and-cloud/":
+case "/homecomputing/diskdirector/thanks/":
+window.optimizely.push(["trackEvent", "consumerTrial"]);
+break;
+case "/enterprise/download/thanks/":
+window.optimizely.push(["trackEvent", "corporateTrial"]);
+break;
+}
+}
+catch(err) {
+}
+kharkiv.pushSet(kharkiv['third_party'], function() {
+kharkiv.sendPageView();
+});
+});</script><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+<title>Acronis backup software and recovery services in UK. Backup software for data backup and disaster recovery in Windows and Linux - Acronis</title>
+<link rel="alternate" hreflang="x-default" href="https://www.acronis.com/en-us/404.html" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Data backup software and disaster recovery solutions help you back up hard disk drive files, provides system disaster recovery, creates image drives in Windows and Linux." /><meta name="keywords" content="Acronis data backup software, best backup and recovery solution for window and linux servers and home PC, back up hard disk drive files, system disaster recovery, server disk images, drive imaging programs, backup and restore, cloning server, partition management software, disk management tools, partition and backup software, data protection" /><link rel="apple-touch-icon" href="//www.acronis.com/en-gb/i/meta/apple/apple-touch-icon.png" /><link rel="apple-touch-icon" sizes="57x57" href="//www.acronis.com/en-gb/i/meta/apple/apple-touch-icon-57x57-precomposed.png" /><link rel="apple-touch-icon" sizes="72x72" href="//www.acronis.com/en-gb/i/meta/apple/apple-touch-icon-72x72-precomposed.png" /><link rel="apple-touch-icon" sizes="114x114" href="//www.acronis.com/en-gb/i/meta/apple/apple-touch-icon-114x114-precomposed.png" /><link rel="apple-touch-icon" sizes="144x144" href="//www.acronis.com/en-gb/i/meta/apple/apple-touch-icon-144x144-precomposed.png" /><link rel="shortcut icon" href="//www.acronis.com/en-gb/i/favicon.ico" type="image/vnd.microsoft.icon" /><link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,800,700,600,300&subset=latin,latin-ext,cyrillic-ext" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="//www.acronis.com/en-gb/css/m2006.css?2018-11-20"/><link rel="stylesheet" type="text/css" href="//www.acronis.com/en-gb/css/sec2006.css?2018-11-20"/>
+<script type="text/javascript" src="//www.acronis.com/en-gb/js/common.js?2018-11-20"></script> 
+<script type="text/javascript" src="//www.acronis.com/en-gb/js/prices?2018-11-20"></script>
+<style type="text/css">*, form, input, body, td, table, div { margin: 0; padding: 0; }
+html, body { height: 100%; }
+#wrap {
+min-height: 100%;
+height: auto !important;
+height: 100%;
+margin: 0 auto -4em;
+overflow:hidden;
+}
+#main {
+overflow:hidden;
+padding-bottom: 63px;
+}
+.inner {
+margin: 0 auto;
+position: relative;
+width: 960px;
+}
+article {
+text-align: left;
+background: url("/i/404/404_bg.png") no-repeat right 55px;
+min-height: 100%;
+}
+article ul {
+padding: 20px 0 54px;
+width: 450px;
+}
+article li {
+list-style-type: none;
+padding: 8px 0 0;
+}
+article li a {
+color: #488bd3;
+padding: 0;
+}
+article li a:hover {
+text-decoration:underline;
+}
+td#cntnt h1, #main h1 {
+color: #488bd3;
+font-size: 60px;
+font-weight: 100;
+line-height: 64px;
+}
+td#cntnt h2, #main h2 {
+color: #2D3138;
+font-size: 24px;
+font-weight: normal;
+margin: 0;
+padding: 38px 0 42px;
+line-height: 25px;
+}
+a.blue_button {
+background: #488bd3;
+color: #fff;
+display: block;
+font-size: 14px;
+font-weight: bold;
+height: 48px;
+line-height: 48px;
+margin: 0;
+padding: 0 15px;
+text-align: center;
+text-transform: uppercase;
+width: 153px;
+}
+p.last {
+border-top: 1px solid #e0e4e7;
+padding: 18px 0 90px;
+width: 460px;
+}
+.rkg-tracking {overflow: hidden;}
+body: before {
+content: "";
+height: 100%;
+float: left;
+width: 0;
+margin-top: -32767px;
+}
+<!--[if !IE 7]>
+#wrap {display:table;height:100%}
+<![endif]-->
+</style></head><body><style type="text/css">
+form, input, body, td, table, div { margin: 0; padding: 0; }
+body {
+background: none;
+font: 400 13px/16px 'Open Sans', Arial, sans-serif;
+color:#6f7683;
+}
+a {
+color: #488BD3;
+text-decoration: none;
+}
+.wacom-wr { margin: 0; padding: 0; border: 0; }
+.header-title {
+color: #488BD3;
+display: block;
+font-size: 48px;
+font-weight: 300;
+line-height: 48px;
+padding-top: 30px;
+}
+.relative {
+position: relative;
+} 
+.wacom-header {
+background: url(/i/templates/METRO/header-banner_bg.png) repeat-x 0 48px #00204d;
+height: 220px;
+}
+.big-header {
+/*height: 288px;*/
+}
+.wacom-header .overflow {
+overflow: hidden;
+width: 100%;
+}
+.wacom-wr {
+background: #fff;
+/*border-top: 1px solid #eff1f4;*/
+}
+.wacom-content {
+/*background: #00204d;*/
+margin: 0 auto;
+padding: 47px 0 96px;
+position: relative;
+max-width: 960px;
+width: 100%;
+}
+.inner {
+max-width: 960px;
+width: 100%;
+margin: 0 auto;
+}
+.gray {
+background-color: #f1f3f4;
+} 
+/* REWRITES */ 
+.wacom-content .a-main-content-wrapper,
+.wacom-content .a-content-tabs-wrapper,
+.wacom-content .a-content-tabs-ct,
+.wacom-content .a-content-tabs,
+.wacom-content .a-content {
+background: #fff;
+padding: 0;
+margin: 0;
+border: 0;
+max-width: 960px;
+width: 100%;
+}
+.wacom-content .a-content-tabs-ct-bottom { display: none }
+p {
+margin: 0;
+padding: 0 0 16px;
+}
+</style>
+<!--[if lt IE 9]>
+<div class="wacom-wr lt-ie9">
+<![endif]-->
+<!--[if gt IE 9]>
+<div class="wacom-wr">
+<![endif]-->
+<div class="wacom-header nojs "><style type="text/css">
+@import url("/sites/all/modules/navi/css/menu.css?1");
+@import url("/sites/all/themes/custom/acronis/css/acronis-cms.common.css?1");
+@import url("/sites/all/themes/custom/acronis/css/acronis-cms.desktop.css?1");
+@import url("/sites/all/themes/custom/acronis/css/acronis-cms.tablet.css?1");
+@import url("/sites/all/themes/custom/acronis/css/acronis-cms.smalltouch.css?1");
+#header {
+text-align: left;
+}
+.site_selector h3 {
+text-align: left;
+}
+.menu-item-business .menu-dropdown-item.menu-promo{background:#eaf3ff;}.aba_dropdown_banner .description{display:block;clear:both;padding:10px 23px;color:#414752;font-size:14px;}.aba_dropdown_banner .aba_banner_btns{margin:10px 23px;background-image:url('/sites/default/public_files/product_image/acronis_backup_advanced_dropdown_menu_banner.png');background-repeat:no-repeat;background-position:right center;}.aba_dropdown_banner .aba_banner_btns a{text-align:center;width:150px;box-sizing:border-box;padding:14px 30px;font-size:14px;}.btn.button-2,.btn.button-2:hover{border:none;}.aba_dropdown_banner .aba_banner_btns a:hover{color:#fff;}
+.q3_cloud_promo_menu{max-width:320px;}.q3_cloud_promo_menu a img{vertical-align:bottom;max-width:100%}.promo-banner{background-color:#f1f3f4;color:#b40e0e;display:block;font:700 32px/28px "Open Sans",Arial,sans-serif;margin:0;padding:7px 10px 25px;position:relative;text-align:center;width:300px;}.promo-banner b{color:#0d3d7b;display:block;font-size:14px;padding:20px 0 5px;text-transform:uppercase;}.promo-banner u{display:block;font-size:20px;line-height:18px;padding-top:10px;text-decoration:none;}.promo-banner a{background-color:#b40e0e;color:#ffffff;display:inline-block;font-size:14px;font-style:normal;line-height:17px;margin:25px 0 12px;padding:20px 10px 19px;text-align:center;text-decoration:none;text-transform:uppercase;width:159px;}.promo-banner a:hover{color:#fff;}.promo-banner i{color:#6f7683;display:block;font-size:16px;font-style:normal;font-weight:normal;}
+.menu-navigation .menu-item-business .menu-promo a.promo-wbd{position:absolute;left:0;top:0;}
+</style><div id="header" class="clearfix"><div class="menu-acronis"><div class="menu-navigation"><a href="//www.acronis.com/en-gb/" class="menu-logo"><svg width="100%" height="100%"><image xlink:href="/sites/all/themes/custom/acronis/images/logo.svg" src="/sites/all/themes/custom/acronis/images/menu_logo.png" width="100%" height="100%" alt="Acronis"/></svg></a> <input id="menu-icon-label" class="menu-icon-label" type="checkbox"><ol class="menu-top"><li><a href="//www.acronis.com/en-gb/company/" data-ga_unique_name="Company">Company</a></li><li><a href="//www.acronis.com/en-gb/resource-center/" data-ga_unique_name="Resources">Resources</a></li><li><a href="//www.acronis.com/en-gb/business/renewals/" data-ga_unique_name="Renewals">Renewals</a></li><li class="item-account item-mobile"><a href="https://account.acronis.com" data-ga_unique_name="Account"><span>Account</span></a></li><li class="item-select-language item-mobile"><a href="//www.acronis.com/en-gb/" data-ga_unique_name="Country" id="select-language-top"><span>United Kingdom</span></a></li><li class="item-search item-mobile"><a href="//www.acronis.com/en-gb/search/" data-ga_unique_name="Search"><span>search</span></a></li><li class="item-icon item-mobile"><label for='menu-icon-label'><span data-ga_unique_name="mobile-menu" class="nolink"> </span></label></li></ol> <ol class="menu-main"><li class="menu-item-home menu-item"><a href="//www.acronis.com/en-gb/personal/computer-backup/" data-ga_unique_name="Personal" class="menu-item-title">Personal</a><i class="menu-item-touch"><b>&nbsp;</b></i><ul class="menu-dropdown"><li><a href="//www.acronis.com/en-gb/personal/computer-backup/" data-ga_unique_name="Acronis True Image 2021"><span>Acronis True Image 2021 <i class="new">New</i></span></a></li><li><a href="//www.acronis.com/en-gb/personal/cyberfit-score-tool/" data-ga_unique_name="Acronis #CyberFit Score"><span>Acronis #CyberFit Score | Free <i class="new">New</i></span></a></li><li><a href="//www.acronis.com/en-gb/personal/disk-manager/" data-ga_unique_name="Acronis Disk Director 12.5"><span>Acronis Disk Director 12.5 </span></a></li><li><a href="//www.acronis.com/en-gb/personal/how-to-recover-files/" data-ga_unique_name="Acronis Revive 2019">Acronis Revive 2019</a></li><li><a href="//www.acronis.com/en-gb/personal/vss-diagnostic-free-tool/" data-ga_unique_name="Acronis VSS Doctor">Acronis VSS Doctor | Free</a></li></ul></li><li class="new-business-style menu-item-business menu-item"><a href="//www.acronis.com/en-gb/business/overview/" data-ga_unique_name="Business" class="menu-item-title">Business</a><i class="menu-item-touch"><b>&nbsp;</b></i><ul class="menu-dropdown"><li class="menu-item-business-v1"><div class="entity entity-tpl tpl-basic tpl-374 clearfix"><div class="menu-highlated-product"><a class="menu-highlated-product__name" data-ga_unique_name="Acronis Cyber Protect" href="/en-gb/business/cyber-protect/"><i class="new">Beta</i> Acronis Cyber Protect</a> <a class="menu-highlated-product__description" data-ga_unique_name="Acronis Cyber Protect" href="/en-gb/business/cyber-protect/">Try AI-Powered Integration of Data Protection and Cybersecurity for Businesses</a></div><ul><li class="menu-dropdown-group menu-dropdown-item"><ol class="item-1"><li><a class="overview" data-ga_unique_name="Acronis Cyber Backup" href="/en-gb/business/backup/">Acronis Cyber Backup</a></li><li class="first addon-list"><span class="overview no-hover">Add-ons</span></li><li class="addon-list"><a class="overview subtitle" data-ga_unique_name="Acronis Disaster Recovery" href="/en-gb/business/backup/disaster-recovery-software/">Acronis Disaster Recovery</a></li><li class="addon-list"><a class="overview subtitle" data-ga_unique_name="Acronis Cloud Storage" href="/en-gb/business/backup/cloud-storage/">Acronis Cloud Storage</a></li></ol><ol><li><b>Physical</b></li><li><a data-ga_unique_name="Windows Server" href="/en-gb/business/backup/windows-server/">Windows Server</a></li><li><a data-ga_unique_name="Windows Server Essentials" href="/en-gb/business/backup/server-essentials/">Windows Server Essentials</a></li><li><a data-ga_unique_name="Linux" href="/en-gb/business/backup/linux-server/">Linux</a></li><li><strong>Virtual</strong></li><li><a data-ga_unique_name="VMware vSphere" href="/en-gb/business/backup/virtual-machine/">VMware vSphere</a></li><li><a data-ga_unique_name="Microsoft Hyper-V" href="/en-gb/business/backup/hyper-v/">Microsoft Hyper-V</a></li><li><a data-ga_unique_name="Citrix XenServer" href="/en-gb/business/backup/xen/">Citrix XenServer</a></li><li><a data-ga_unique_name="Red Hat Virtualization" href="/en-gb/business/backup/rhv/">Red Hat Virtualization</a></li><li><a data-ga_unique_name="Linux KVM" href="/en-gb/business/backup/kvm/">Linux KVM</a></li><li><a data-ga_unique_name="Oracle VM Server" href="/en-gb/business/backup/oracle-vm/">Oracle VM Server</a></li></ol><ol><li><b>Applications</b></li><li><a data-ga_unique_name="Exchange" href="/en-gb/business/backup/microsoft-exchange/">Exchange</a></li><li><a data-ga_unique_name="SQL Server" href="/en-gb/business/backup/sql/">SQL Server</a></li><li><a data-ga_unique_name="SharePoint" href="/en-gb/business/backup/microsoft-sharepoint/">SharePoint</a></li><li><a data-ga_unique_name="Active Directory" href="/en-gb/business/backup/active-directory/">Active Directory</a></li><li><a data-ga_unique_name="Oracle Database" href="/en-gb/business/backup/oracle/">Oracle Database</a></li><li><a data-ga_unique_name="SAP HANA" href="/en-gb/business/backup/sap-hana/">SAP HANA</a></li><li><strong>Mobile</strong></li><li><a data-ga_unique_name="iPhone/iPad" href="/en-gb/business/backup/iphone-ipad-android/">iPhone/iPad</a></li><li><a data-ga_unique_name="Android" href="/en-gb/business/backup/iphone-ipad-android/">Android</a></li></ol><ol><li><b>Endpoints</b></li><li><a data-ga_unique_name="Windows PC" href="/en-gb/business/backup/workstation/">Windows PC</a></li><li><a data-ga_unique_name="Mac" href="/en-gb/business/backup/mac/">Mac</a></li><li><strong>Cloud</strong></li><li><a data-ga_unique_name="Microsoft 365" href="/en-gb/business/backup/office-365/">Microsoft 365</a></li><li><a data-ga_unique_name="G Suite" href="/en-gb/business/backup/g-suite/">G Suite</a></li><li><a data-ga_unique_name="Azure" href="/en-gb/business/backup/cloud-vm/">Azure</a></li><li><a data-ga_unique_name="Amazon EC2" href="/en-gb/business/backup/cloud-vm/">Amazon EC2</a></li></ol></li><li class="menu-dropdown-group menu-dropdown-item"><ol class="item-1"><li><a class="overview" data-ga_unique_name="More products" href="/en-gb/business/overview/">More products</a></li></ol><ol><li><a data-ga_unique_name="Acronis Cyber Cloud for Enterprise" href="/en-gb/business/enterprise-cyber-cloud/">Acronis Cyber Cloud for Enterprise</a></li><li><a data-ga_unique_name="Acronis Cyber Infrastructure" href="/en-gb/business/cyber-infrastructure/">Acronis Cyber Infrastructure</a></li><li><a data-ga_unique_name="Acronis Files Connect" href="/en-gb/mobility/mac-windows-compatibility/">Acronis Files Connect</a></li></ol><ol><li><a data-ga_unique_name="Acronis Files Advanced" href="/en-gb/mobility/files-advanced/">Acronis Cyber Files</a></li><li><a data-ga_unique_name="Acronis Snap Deploy" href="/en-gb/business/enterprise-solutions/image-deployment/">Acronis Snap Deploy</a></li><li><a data-ga_unique_name="Acronis Monitoring Service" href="/en-gb/business/monitoring-service/">Acronis Monitoring Service</a></li><li><a data-ga_unique_name="Acronis Disk Director" href="/en-gb/business/enterprise-solutions/server-partition-management/">Acronis Disk Director</a></li></ol><ol><li><a data-ga_unique_name="Acronis MassTransit" href="/en-gb/mobility/managed-file-transfer/">Acronis MassTransit</a></li><li><a data-ga_unique_name="Acronis Cloud Manager" href="/en-gb/business/cloud-manager/">Acronis Cloud Manager </a><i class="new">New</i></li><li><a data-ga_unique_name="Acronis Cloud Security" href="/en-gb/business/cloud-security/">Acronis Cloud Security </a><i class="new">New</i></li><li><a data-ga_unique_name="Acronis Cloud Migration" href="/en-gb/business/cloud-migration/">Acronis Cloud Migration </a><i class="new">New</i></li></ol></li><li class="menu-dropdown-group menu-dropdown-item"><ol class="item-1"><li><a class="overview" data-ga_unique_name="Data protection solutions" href="/en-gb/business/enterprise-solutions/">Data protection solutions</a>  </li></ol><ol><li><b>For Your Business</b></li><li><a data-ga_unique_name="Small Businesses" href="/en-gb/business/enterprise-solutions/small-business/">Small Businesses</a></li><li><a data-ga_unique_name="Medium-sized Businesses" href="/en-gb/business/enterprise-solutions/mid-size-business/">Medium-sized Businesses</a></li><li><a data-ga_unique_name="Enterprise" href="/en-gb/business/enterprise-solutions/enterprise/">Enterprise</a></li><li><a data-ga_unique_name="Air-gapped Networks" href="/en-gb/business/backup-scs/">Air-gapped Networks</a></li><li><a data-ga_unique_name="Acronis Professional Services" href="/en-gb/business/enterprise-solutions/professional-services/">Acronis Professional Services</a></li></ol><ol><li><b>For Your Industry</b></li><li><a data-ga_unique_name="Manufacturing Automotive" href="/en-gb/s/lp/business/manufacturing-backup/">Manufacturing &amp; Automotive</a></li><li><a data-ga_unique_name="Education Research" href="/en-gb/business/enterprise-solutions/acronis-for-education-research/">Education &amp; Research</a></li><li><a data-ga_unique_name="Public Sector" href="/en-gb/business/enterprise-solutions/government-education/">Public Sector</a></li><li><a data-ga_unique_name="Service Providers" href="/en-gb/cloud/service-provider/">Service Providers</a></li></ol><ol><li><b>For Your Environment</b></li><li><a data-ga_unique_name="Microsoft Environments" href="/en-gb/business/enterprise-solutions/microsoft/">Microsoft Environments</a></li></ol></li></ul> </div></li></ul></li><li class="menu-item-service-providers menu-item"><a href="//www.acronis.com/en-gb/cloud/service-provider/" data-ga_unique_name="Service Providers" class="menu-item-title">Service Providers</a><i class="menu-item-touch"><b>&nbsp;</b></i><ul class="menu-dropdown"><li class="menu-dropdown-item"><a href="//www.acronis.com/en-gb/cloud/service-provider/platform/" data-ga_unique_name="Acronis Cyber Cloud" class="menu-dropdown-title-uppercase menu-dropdown-title"><span>Acronis Cyber Cloud <i class="new">Updated</i></span></a><ul class="menu-dropdown-list"><li><a href="//www.acronis.com/en-gb/cloud/cyber-protect/" data-ga_unique_name="Acronis Cyber Protect Cloud"><span>Acronis Cyber Protect Cloud <i class="new">New</i></span></a></li><li><a href="//www.acronis.com/en-gb/cloud/service-provider/backup/" data-ga_unique_name="Acronis Cyber Backup Cloud"><span>Acronis Cyber Backup Cloud <i class="new">Updated</i></span></a></li><li><a href="//www.acronis.com/en-gb/cloud/service-provider/disaster-recovery/" data-ga_unique_name="Acronis Cyber Disaster Recovery Cloud"><span>Acronis Cyber Disaster Recovery Cloud <i class="new">Updated</i></span></a></li><li><a href="//www.acronis.com/en-gb/cloud/service-provider/files/" data-ga_unique_name="Acronis Cyber Files Cloud"><span>Acronis Cyber Files Cloud</span></a></li><li><a href="//www.acronis.com/en-gb/cloud/service-provider/notary/" data-ga_unique_name="Acronis Cyber Notary Cloud"><span>Acronis Cyber Notary Cloud</span></a></li></ul></li><li class="menu-dropdown-item-border"><a href="//www.acronis.com/en-gb/cloud/service-provider/platform/trial/" data-ga_unique_name="Acronis Cyber Cloud Get Free Trial" class="item-free-trial">Get Free Trial</a></li><li><a href="//www.acronis.com/en-gb/business/cyber-infrastructure/" data-ga_unique_name="Acronis Cyber Infrastructure"><span>Acronis Cyber Infrastructure <i class="new">Updated</i></span></a></li><li><a href="//www.acronis.com/en-gb/cloud/service-provider/vcloud/" data-ga_unique_name="Acronis Backup Advanced For vCloud">Acronis Backup Advanced For vCloud</a></li><li><a href="//www.acronis.com/en-gb/business/enterprise-solutions/professional-services/#service-providers" data-ga_unique_name="Acronis Professional Services"><span>Acronis Professional Services</span></a></li><li><a href="//www.acronis.com/en-gb/cloud/data-centers/" data-ga_unique_name="Cloud Data Centers">Cloud Data Centers</a></li></ul></li><li class="menu-item-partners menu-item"><a href="//www.acronis.com/en-gb/partners/" data-ga_unique_name="Partners" class="menu-item-title">Partners</a><i class="menu-item-touch"><b>&nbsp;</b></i><ul class="menu-dropdown"><li class="menu-dropdown-item"><a href="//www.acronis.com/en-gb/partners/" data-ga_unique_name="Partner Programs" class="menu-dropdown-title">Partner Programs</a><ul class="menu-dropdown-list"><li><a href="//www.acronis.com/en-gb/partners/service-providers/" data-ga_unique_name="Service Provider Program">Service Provider Program</a></li><li><a href="//www.acronis.com/en-gb/partners/resellers/" data-ga_unique_name="Reseller Program">Reseller Program</a></li><li><a href="//www.acronis.com/en-gb/partners/oem/" data-ga_unique_name="OEM Program">OEM Program</a></li><li><a href="http://affiliate.acronis.com" data-ga_unique_name="Affiliates Program">Affiliates Program</a></li></ul></li><li><a href="https://partners.acronis.com/profile/login.html" data-ga_unique_name="Partner Portal">Partner Portal</a></li><li><a href="//www.acronis.com/en-gb/partners/locator/" data-ga_unique_name="Partner Locator">Partner Locator</a></li><li><a href="//www.acronis.com/en-gb/partners/distributor-locator/" data-ga_unique_name="Distributor Locator">Distributor Locator</a></li><li><a href="//www.acronis.com/en-gb/partners/cyber-platform/" data-ga_unique_name="Cyber Platform Overview">Cyber Platform Overview</a></li><li><a href="https://developer.acronis.com/" data-ga_unique_name="Developers portal">Developers Portal</a></li><li><a href="https://solutions.acronis.com" data-ga_unique_name="Solutions catalog">Solutions Portal</a></li></ul></li><li class="menu-item-company menu-item"><a href="//www.acronis.com/en-gb/company/" data-ga_unique_name="Company" class="menu-item-title">Company</a><i class="menu-item-touch"><b>&nbsp;</b></i><ul class="menu-dropdown"><li><a href="//www.acronis.com/en-gb/company/" data-ga_unique_name="About Acronis">About Acronis</a></li><li><a href="https://www.acronis.com/en-us/blog/" data-ga_unique_name="Company Blog">Company Blog</a></li><li><a href="//www.acronis.com/en-gb/any-data/" data-ga_unique_name="AnyData Technology">AnyData Technology</a></li><li><a href="//www.acronis.com/en-gb/company/#contacts" data-ga_unique_name="Contact us">Contact us</a></li><li><a href="//www.acronis.com/en-gb/company/#management" data-ga_unique_name="Management">Management</a></li><li><a href="//www.acronis.com/en-gb/company/#press-center" data-ga_unique_name="News and Events">News &amp; Events</a></li><li><a href="//www.acronis.com/en-gb/company/#social-community" data-ga_unique_name="Social Community">Social Community</a></li><li><a href="//www.acronis.com/en-gb/company/#careers" data-ga_unique_name="Careers">Careers</a></li></ul></li><li class="menu-item-support menu-item"><a href="//www.acronis.com/en-gb/support/" data-ga_unique_name="Support" class="menu-item-title">Support</a><i class="menu-item-touch"><b>&nbsp;</b></i><ul class="menu-dropdown"><li><a href="//www.acronis.com/en-gb/support/documentation/" data-ga_unique_name="Documentation">Documentation</a></li><li><a href="//www.acronis.com/en-gb/support/updates/index.html" data-ga_unique_name="Product Updates">Product Updates</a></li><li><a href="//www.acronis.com/en-gb/support/lifecycle/" data-ga_unique_name="Product Support Lifecycle">Product Support Lifecycle</a></li><li><a href="https://kb.acronis.com/" data-ga_unique_name="Knowledge Base">Knowledge Base</a></li><li><a href="https://forum.acronis.com/" data-ga_unique_name="User Forums">User Forums</a></li><li><a href="//www.acronis.com/en-gb/tutorials/" data-ga_unique_name="Video tutorials">Video tutorials</a></li><li><a href="//www.acronis.com/en-gb/support/" data-ga_unique_name="Contact Support">Contact Support</a></li><li><a href="//www.acronis.com/en-gb/business/renewals/" data-ga_unique_name="Maintenance renewals">Maintenance renewals</a></li><li><a href="//www.acronis.com/en-gb/support/feedback.html" data-ga_unique_name="Submit Feedback">Submit Feedback</a></li></ul></li></ol> </div></div></div>
+<script src="/sites/all/modules/navi/js/menu.js"></script>
+<div class="inner relative"></div><div class="overflow"><div class="relative inner bg"><div class="light-bg"></div><div class="product-bg"></div></div></div></div><div class="wacom-wr"><div class="wacom-content">
+<div class="corp">
+<table cellspacing="0" class="cntnt" style="padding:0 !important; margin:0 !important; width:961px !important;"><tr><td valign="top"><table cellspacing="0" width="100%" style="padding:0 !important; margin:0 !important; width:961px !important;"><tr><td id="cntnt" style="padding-right:0 !important; margin:0 !important; width:960px !important;" valign="top" width="960"><div id="wrap"><div id="main"><article class="inner"><h1>Page Not Found</h1><h2>In the meantime, check out these pages</h2><a title = "Home Page" class="blue_button" href="/en-gb/">Home Page</a><ul class="404"><li><a href="//www.acronis.com/en-gb/personal/">Personal Backup and Disk Management</a></li><li><a href="//www.acronis.com/en-gb/business/overview/">Business Backup and Storage Management</a></li><li><a href="//www.acronis.com/en-gb/mobility/">Enterprise Mobility</a></li><li><a href="//www.acronis.com/en-gb/provider/">Service Provider Backup and Storage</a></li><li><a href="//www.acronis.com/en-gb/partners/">Partners</a></li><li><a href="//www.acronis.com/en-gb/company/">Company</a></li><li><a href="//www.acronis.com/en-gb/support/">Support</a></li></ul><p class="last"> Or <a href="//www.acronis.com/en-gb/support/feedback.html">inform us </a> about missing page</p></article></div></div></td></tr></table></td></tr><tr><td class="tbordered">
+</td></tr></table></div></div> 
+</div> 
+<div class="wacom-footer"><div id="footer"><div class="region region-footer"><div class="region-inner clearfix"><div id="block-system-user-menu" class="block block-system block-menu no-title" role="navigation"><div class="block-inner clearfix"> 
+<div class="block-content content"><ul class="menu clearfix"><li class="first leaf menu-depth-1 menu-item-3442"><a href="//www.acronis.com/en-gb/business/renewals/"><span>Renewals</span></a></li><li class="leaf menu-depth-1 menu-item-480"><a href="//www.acronis.com/en-gb/company/#contacts" name="contacts"><span>Contact us</span></a></li><li class="leaf menu-depth-1 menu-item-481"><a href="//www.acronis.com/en-gb/sitemap/" data-ga_unique_name="Sitemap"><span>Site map</span></a></li><li class="last leaf menu-depth-1 menu-item-447"><a href="//www.acronis.com/en-gb/" id="select-language-bottom" class="country" display="language_selector"><span>United Kingdom</span></a></li></ul></div></div></div><div id="block-menu-menu-footer-additional-menu" class="block block-menu no-title" role="navigation"><div class="block-inner clearfix"> 
+<div class="block-content content"><ul class="menu clearfix"><li class="first expanded menu-depth-1 menu-item-4173"><a href="//www.acronis.com/en-gb/company/" data-ga_unique_name="Company Footer"><span>Company</span></a><ul class="menu clearfix"><li class="first leaf menu-depth-2 menu-item-4174"><a href="//www.acronis.com/en-gb/company/awards/" data-ga_unique_name="Awards Footer"><span>Awards</span></a></li><li class="leaf menu-depth-2 menu-item-4175"><a href="//www.acronis.com/en-gb/blog/" data-ga_unique_name="Blog Footer"><span>Blog</span></a></li><li class="leaf menu-depth-2 menu-item-4176"><a href="//www.acronis.com/en-gb/company/#management" data-ga_unique_name="Management Footer" name="management"><span>Management</span></a></li><li class="leaf menu-depth-2 menu-item-4177"><a href="//www.acronis.com/en-gb/company/#press-center" data-ga_unique_name="News Footer" name="press-center"><span>News & Events</span></a></li><li class="last leaf menu-depth-2 menu-item-4178"><a href="//www.acronis.com/en-gb/careers/" data-ga_unique_name="Careers Footer"><span>Careers</span></a></li></ul></li><li class="expanded menu-depth-1 menu-item-4036"><a href="//www.acronis.com/en-gb/articles/" data-ga_unique_name="Articles Footer"><span>Articles</span></a><ul class="menu clearfix"><li class="first leaf menu-depth-2 menu-item-4239"><a href="//www.acronis.com/en-gb/ransomware-protection/" data-ga_unique_name="Ransomware Protection Footer"><span>Ransomware Protection</span></a></li><li class="leaf menu-depth-2 menu-item-4037"><a href="//www.acronis.com/en-gb/cloud/backup/" data-ga_unique_name="iCloud Photos"><span>Cloud Backup</span></a></li><li class="leaf menu-depth-2 menu-item-4204"><a href="//www.acronis.com/en-gb/articles/gdpr/" data-ga_unique_name="GDPR"><span>GDPR</span></a></li><li class="leaf menu-depth-2 menu-item-4150"><a href="//www.acronis.com/en-gb/articles/cloning-software/" data-ga_unique_name="Petya Ransomware footer"><span>Cloning Software</span></a></li><li class="last leaf menu-depth-2 menu-item-4227"><a href="//www.acronis.com/en-gb/cyber-protection/" data-ga_unique_name="Windows Update"><span>Cyber Protection</span></a></li></ul></li><li class="expanded menu-depth-1 menu-item-4212"><a href="//www.acronis.com/en-gb/" data-ga_unique_name="Special Projects"><span>Special Projects</span></a><ul class="menu clearfix"><li class="first leaf menu-depth-2 menu-item-4217"><a href="https://acronis.org" data-ga_unique_name="Acronis Foundation" target="_blank"><span>Acronis Foundation</span></a></li><li class="leaf menu-depth-2 menu-item-4214"><a href="https://acronis.org/books/acronis-chronicles/" data-ga_unique_name="Acronis Chronicles"><span>Acronis Chronicles</span></a></li><li class="last leaf menu-depth-2 menu-item-4213"><a href="https://motorsport.tech" data-ga_unique_name="Acronis Motorsport"><span>Acronis Motorsport</span></a></li></ul></li><li class="last expanded menu-depth-1 menu-item-455"><a href="//www.acronis.com/en-gb/support/index.html"><span>Support</span></a><ul class="menu clearfix"><li class="first leaf menu-depth-2 menu-item-469"><a href="//www.acronis.com/en-gb/support/updates/index.html"><span>Product Updates</span></a></li><li class="leaf menu-depth-2 menu-item-470"><a href="https://kb.acronis.com/" data-ga_unique_name="kb"><span>Knowledge Base</span></a></li><li class="leaf menu-depth-2 menu-item-471"><a href="//www.acronis.com/en-gb/support/documentation/" locales="de 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"><span>Documentation​</span></a></li><li class="leaf menu-depth-2 menu-item-472"><a href="//www.acronis.com/en-gb/support/contact-us/" data-ga_unique_name="Contact Support"><span>Contact Support</span></a></li><li class="last leaf menu-depth-2 menu-item-2736"><a href="http://affiliate.acronis.com"><span>Affiliate Program</span></a></li></ul></li></ul></div></div></div><div id="block-cosmic-acronis-social-buttons" class="block block-cosmic no-title" ><div class="block-inner clearfix"> 
+<div class="block-content content"><div><a href="https://www.facebook.com/acronis" class="facebook" target="_blank" title="Facebook">Facebook</a></div><div><a href="https://www.twitter.com/acronis" class="twitter" target="_blank" title="Twitter">Twitter</a></div><div><a href="//www.acronis.com/en-gb/blog/" class="blog" target="_blank" title="Blog">Blog</a></div><div><a href="https://www.youtube.com/Acronis" class="youtube" target="_blank" title="Youtube">Youtube</a></div><div><a href="https://www.linkedin.com/company/acronis/" class="linkedin" target="_blank" title="Linkedin">linkedin</a></div><div><a href="https://www.reddit.com/r/acronis/" class="reddit" target="_blank" title="Reddit">reddit</a></div><div><a href="https://community.spiceworks.com/pages/acronis" class="spiceworks" target="_blank" title="Spiceworks">spiceworks</a></div></div></div></div><div id="block-block-3" class="block block-block no-title" ><div class="block-inner clearfix"> 
+<div class="block-content content"><p>© 2003-2020 Acronis International GmbH. All rights reserved.</p></div></div></div><div id="block-menu-menu-bottom-menu" class="block block-menu no-title" role="navigation"><div class="block-inner clearfix"> 
+<div class="block-content content"><ul class="menu clearfix"><li class="first leaf menu-depth-1 menu-item-499"><a href="//www.acronis.com/en-gb/legal.html" rel="nofollow"><span>Legal info</span></a></li><li class="last leaf menu-depth-1 menu-item-4224"><a href="//www.acronis.com/en-gb/company/privacy.html" rel="nofollow"><span>&nbsp;&nbsp;Privacy Policy</span></a></li></ul></div></div></div><div id="block-block-19" class="block block-block no-title" ><div class="block-inner clearfix"> 
+<div class="block-content content"><script>
+(function($) {
+$('.product-header.wrapper .field-type-text-with-summary .field-item.even .just-released-block').clone().appendTo($('.product-inner.clearfix h1'));
+$('.product-header.wrapper .field-type-text-with-summary .field-item.even .just-released-block').remove();
+})(jQuery);
+</script></div>
+</div></div><div id="block-block-61" class="block block-block no-title" ><div class="block-inner clearfix"> 
+<div class="block-content content"><script>
+(function($){
+$('a.slide_link').click(function(e){
+e.preventDefault();
+$('div.slide_block').not($(this).next()).hide();
+$(this).next().toggle(); 
+}); 
+$('div.slide_block a').click(function(e){
+e.preventDefault(); 
+$(this).parents('div').siblings('a').text($(this).text());
+$(this).parents('.choose_action').find('.btn-buy').addClass('buy-active').attr('href', $(this).attr('id')); 
+$('div.slide_block').hide(); 
+}); 
+}) (jQuery);
+</script></div>
+</div></div></div></div> </div><div id="country_selector"><div class="country-selector-wr"><div class="main_language_selector"><h2>Choose your region</h2><div class="first_column column"><ul class="main_section"><h3>North America</h3>
+
+<li class="language_selector_item"><a href="/en-us/">Canada <span>(English)</span></a></li>
+
+<li class="language_selector_item"><a href="/fr-ca/">Canada <span>(Français)</span></a></li>
+
+<li class="language_selector_item"><a href="/en-us/">United States <span>(English)</span></a></li>
+
+<li class="language_selector_item"><a href="/es-mx/">México <span>(Español)</span></a></li></ul><ul class="main_section"><h3>South America</h3>
+
+<li class="language_selector_item"><a href="/en-us/">Brazil <span>(English)</span></a></li>
+
+<li class="language_selector_item"><a href="/es-mx/">Latinoamérica <span>(Español)</span></a></li></ul><ul class="main_section"><h3>Middle East and Africa</h3>
+
+<li class="language_selector_item"><a href="/en-eu/">Middle East and Africa <span>(English)</span></a></li></ul></div><div class="second_column column"><ul class="main_section"><h3>Europe</h3>
+
+<li class="language_selector_item"><a href="/en-eu/">België <span>(English)</span></a></li>
+
+<li class="language_selector_item"><a href="/fr-fr/">Belgique <span>(Français)</span></a></li>
+
+<li class="language_selector_item"><a href="/de-de/">Deutschland <span>(Deutsch)</span></a></li>
+
+<li class="language_selector_item"><a href="/es-es/">España <span>(Español)</span></a></li>
+
+<li class="language_selector_item"><a href="/en-eu/">Europe <span>(English)</span></a></li>
+
+<li class="language_selector_item"><a href="/fr-fr/">France <span>(Français)</span></a></li>
+
+<li class="language_selector_item"><a href="/it-it/">Italia <span>(Italiano)</span></a></li>
+
+<li class="language_selector_item"><a href="/en-eu/">Nederland <span>(English)</span></a></li>
+
+<li class="language_selector_item"><a href="/pl-pl/">Polska <span>(Polski)</span></a></li>
+
+<li class="language_selector_item"><a href="/en-us/">Portugal <span>(English)</span></a></li>
+
+<li class="language_selector_item"><a href="/ru-ru/">Россия <span>(Русский)</span></a></li>
+
+<li class="language_selector_item"><a href="/en-eu/">Switzerland <span>(English)</span></a></li>
+
+<li class="language_selector_item"><a href="/en-gb/">United Kingdom <span>(English)</span></a></li><li class="language_selector_item"><a href="https://www.acronis.cz/">Česká <span>(Čeština)</span></a> </li>
+
+<li class="language_selector_item"><a href="/en-eu/">Nordics <span>(English)</span></a></li></ul></div><div class="third_column column"><ul class="main_section"><h3>Asia</h3>
+
+<li class="language_selector_item"><a href="/en-in/">India <span>(English)</span></a></li>
+
+<li class="language_selector_item"><a href="/en-sg/">Singapore <span>(English)</span></a></li>
+
+<li class="language_selector_item"><a href="/zh-cn/">中国 <span>(简体中文)</span></a></li>
+
+<li class="language_selector_item"><a href="/zh-tw/">台灣 <span>(繁體中文)</span></a></li>
+
+<li class="language_selector_item"><a href="/en-hk/">Hong Kong <span>(English)</span></a></li>
+
+<li class="language_selector_item"><a href="/ko-kr/">대한민국 <span>(한국어)</span></a></li>
+
+<li class="language_selector_item"><a href="/ja-jp/">日本 <span>(日本語)</span></a></li>
+
+<li class="language_selector_item"><a href="/id-id/">Indonesia <span>(Bahasa Indonesia)</span></a></li></ul><ul class="main_section"><h3>Australia and Oceania</h3>
+
+<li class="language_selector_item"><a href="/en-au/">Australia <span>(English)</span></a></li></ul></div></div></div></div>
+<script>
+(function ($) {
+$(function () {
+var country_selector_html = $('#country_selector').html();
+$('body').on('click', '#select-language-bottom, #select-language-top', function (e) {
+e.preventDefault();
+ACRONIS['Modals'].createIt({
+'html': country_selector_html,
+'name': 'site_selector'
+});
+});
+});
+})(jQuery);
+</script></div>
+<script>
+/* siteselector */
+$(function() {
+/* Navigation */ 
+$('.wacom-header').removeClass('nojs');
+if (matches = location.pathname.match(/^\/(\w{2,}(-\w{2,})?)\/?.*?/i)) {
+if ($.cookie) {
+$.cookie('language_prefix', matches[1], { path: '/' });
+} else if (document.cookie) {
+document.cookie = 'language_prefix=' + matches[1] + ';path=/';
+}
+}
+});
+</script>
+<script type="text/javascript">
+(function(a,q,r){function f(d){d=d||location.href;return"#"+d.replace(/^[^#]*#?(.*)$/,"$1")}var b="hashchange",i=document,l,s=a.event.special,t=i.documentMode,m="on"+b in q&&(t===r||t>7);a.fn[b]=function(d){return d?this.bind(b,d):this.trigger(b)};a.fn[b].delay=50;s[b]=a.extend(s[b],{setup:function(){if(m)return false;a(l.start)},teardown:function(){if(m)return false;a(l.stop)}});l=function(){function d(){var c=f(),e=u(j);if(c!==j){n(j=c,e);a(q).trigger(b)}else if(e!==j)location.href=location.href.replace(/#.*/,"")+e;g=setTimeout(d,a.fn[b].delay)}var h={},g,j=f(),o=function(c){return c},n=o,u=o;h.start=function(){g||d()};h.stop=function(){g&&clearTimeout(g);g=r};a.browser.msie&&!m&&function(){var c,e;h.start=function(){if(!c){e=(e=a.fn[b].src)&&e+f();c=a('<iframe tabindex="-1" title="empty"/>').hide().one("load",function(){e||n(f());d()}).attr("src",e||"javascript:0").insertAfter("body")[0].contentWindow;i.onpropertychange=function(){try{if(event.propertyName==="title")c.document.title=i.title}catch(p){}}}};h.stop=o;u=function(){return f(c.location.href)};n=function(p,w){var k=c.document,v=a.fn[b].domain;if(p!==w){k.title=i.title;k.open();v&&k.write('<script>document.domain="'+v+'"<\/script>');k.close();c.location.hash=p}}}();return h}()})(jQuery,this);
+window.scrollTo && window.scrollTo(0, 0);
+$(function() {
+var
+$ct = $('.a-main-content-wrapper'),
+$tabLinks = $('.a-content-tabs a', $ct),
+$tabs = $('.a-content-tab', $ct),
+$partLinks = $('.a-content-tab-parts a', $tabs),
+$parts = $('.a-content-tab-part', $tabs);
+//no tabs no js tnx
+if (!$tabs.length) { return false };
+if ($.browser.mozilla) window.scrollTo && window.scrollTo(0, 0);
+$tabs.add($parts).each(function() { this.id = '_' + this.id });
+function setActiveTab($tab, activateFirstPart, doNotScroll) {
+doNotScroll = true;
+$tabLinks
+.filter('.a-active').removeClass('a-active').end()
+.filter('[href=' + $tab[0].id.replace(/^_/, '#') + ']').addClass('a-active');
+$tabs.filter(':visible').css('display', 'none');
+$tab.css('display', 'block');
+//$('.a-content-tabs-ct, .a-content-tab-parts-ct', $ct).scrollTop(0).scrollLeft(0);
+$('.a-content-tabs-ct, .a-content-tab-parts-ct', $ct).each(function () { $(this).scrollTop(0).scrollLeft(0) });
+if (activateFirstPart && $('.a-content-tab-part', $tab).length) {
+setActivePart($('.a-content-tab-part', $tab).eq(0))
+}
+if (!doNotScroll && $ct.offset().top < $(window).scrollTop()) window.scrollTo(0, $ct.offset().top - 50);
+if (!doNotScroll) { $tab.click(); }
+}
+function setActivePart($part) {
+var $tab = $part.closest('.a-content-tab');
+$partLinks
+.filter('.a-active').removeClass('a-active').end()
+.filter('[href=' + $part.get(0).id.replace(/^_/, '#') + ']').addClass('a-active');
+$('.a-content-tab-part', $tab).not($part).css('display', 'none');
+$part.css('display', 'block');
+$part.click();
+}
+$(window).hashchange(function() {
+try {
+var
+hash = location.hash.replace(/^#/, ''),
+$target = $(location.hash.replace(/^#/, '#_'), $ct);
+location.hash || setActiveTab($tabs.eq(0));
+if (!$target.length && !$(location.hash).length) $target = $tabs.eq(0);
+if ($target.hasClass('a-content-tab')) {
+setActiveTab($target, true)
+}
+else if ($target.hasClass('a-content-tab-part')) {
+setActivePart($target);
+setActiveTab($target.closest('.a-content-tab'), false);
+}
+else {
+setActiveTab($(location.hash + ', [name=' + hash + ']').closest('.a-content-tab'), false, true);
+return true;
+}
+return false;
+} catch(e){}
+});
+setTimeout(function () { $(window).hashchange() }, ($.browser.mozilla ? 10 : 0));
+})
+</script>
+<script type="text/javascript">
+(function(){
+var maxWidth = 0;
+if ($(".a-content-tabs li").length < 5) {
+$(".a-content-tabs").addClass('a-content-tabs_float');
+$(".a-content-tabs li a").each(function(){
+$this = $(this);
+var itemWidth = $this.width();
+if (maxWidth < itemWidth) {
+maxWidth = itemWidth;
+}
+}).width(maxWidth);
+}
+})();
+</script>
+<!--[If lte IE 7]>
+<script type="text/javascript">
+(function(){
+var maxWidth = 0; /* Max width of item */
+var sumWidth = 0; /* Sum of items' width */
+var wrWidth = 952; /* Wrapper width */
+var i = 0; /* Items counter */
+var padL = 0; /* Left padding */
+var $lastItem,$productMenu,$productMenuA; /* Last item */
+$productMenu = $(".a-content-tabs");
+$productMenuA = $("li a",$productMenu);
+/* Define same width for all items */
+$productMenuA.each(function(){
+$lastItem = $(this);
+var lastItemWidth = $lastItem.width() + 1;
+if (maxWidth < lastItemWidth) {
+maxWidth = lastItemWidth;
+}
+sumWidth = sumWidth + lastItemWidth;
+i++;
+}).width(maxWidth);
+/* If two lines, reduce left and right paddings */ 
+if ($productMenu.height() > $("li",$productMenu).height()) {
+$productMenuA.width('auto');
+// wrWidth = $productMenu.width();
+padL = Math.floor((wrWidth-sumWidth)/(2*i));
+$productMenuA.css({
+"padding-left": padL + 'px',
+"padding-right": padL + 'px'
+});
+/* Padding for last item */
+padL = padL + (wrWidth - sumWidth - padL*2*i)/2;
+$lastItem.css({
+"padding-left": padL + 'px',
+"padding-right": padL + 'px'
+});
+}
+})();
+</script>
+<![endif]-->
+<script>
+$(function() {
+if (!window.$A) $A = {};
+if (!window.$A.modals) $A.modals = {};
+if (!window.$A.modals.do_not_track_as_download) $A.modals.do_not_track_as_download = [];
+var $modal_window = $();
+$.extend($A.modals, {
+'ati2014-trial': function(options, callback) {
+$A.modals['ati2014-trial'].data = {};
+$.extend($A.modals['ati2014-trial'].data, {
+referrer: encodeURIComponent([location.pathname, location.search, location.hash].join('')),
+cookie_session: !!$A.util.cookie('AcronisSID.en_uk'),
+user: { 'email': '' }
+}, options);
+var modal_data = $A.modals['ati2014-trial'].data;
+if (modal_data.cookie_session) {
+var lsd = [
+'t,', modal_data.lsd.trigger, ';',
+'soa,', modal_data.lsd.cloud.old_acc, ';',
+'sna,', modal_data.lsd.cloud.new_acc, ';'
+];
+var url = [
+location.protocol, '//', 
+'www.acronis.com/en-gb', 
+'/homecomputing/trueimage/thanks/',
+'?rr=', modal_data.referrer, 
+'&pn=', modal_data.pn 
+];
+$.ajax({
+url: '//www.acronis.com/en-gb/ajax/add_cloud.json',
+cache: false,
+type: 'POST',
+dataType: 'json',
+data: { 
+'ms': new Date().getTime(),
+'lsd_new_acc': modal_data.lsd.cloud.new_acc,
+'lsd_old_acc': modal_data.lsd.cloud.old_acc,
+'pn': modal_data.pn,
+'trigger': modal_data.lsd.trigger
+},
+success: function (data) {
+var status = data.Status,
+email = data.Email,
+date = data.StartDate;
+if (status && status != 'noSession') {
+switch (status) {
+case 'hasOBSubscription':
+url.push('&existuser=e');
+url.push('&hascloud=r');
+lsd.push('s,', modal_data.lsd.product, ';');
+break;
+case 'errorAddOBSubscription':
+url.push('&existuser=e');
+url.push('&errcloud=r');
+lsd.push('s,', modal_data.lsd.product, ';');
+break; 
+case 'incompleteRequest':
+console.warn('captcha');
+return;
+break; 
+case 'OK':
+url.push('&existuser=e');
+url.push('&okcloud=r');
+lsd.push('s,', modal_data.lsd.cloud.old_acc, ';');
+break;
+default:
+url.push('&existuser=e');
+url.push('&accerr=r');
+lsd.push('s,', modal_data.lsd.cloud.old_acc, ';');
+} 
+url.push('&lsd=', encodeURIComponent(lsd.join('')), '&ue=' + encodeURIComponent(email) + '&d=' + encodeURIComponent(date));
+window.location.replace(url.join(''));
+return;
+}
+}
+});
+}
+var loaded = $('.modal_ati2014-trial').length > 0;
+if (loaded) {
+$modal_window.show();
+return;
+};
+$.ajax({
+url: '//www.acronis.com/en-gb/includes/modals/ati2014-trial.html',
+dataType: 'html',
+type: 'POST',
+xhrFields: {withCredentials: true},
+success: function (data) {
+if ($A.modals['ati2014-trial'].data.output == 'clear_html') {
+if (callback) callback(data);
+} else {
+$modal_window = new $A.Window({
+autoshow: true,
+modal: true,
+center: true,
+cls: 'modal_ati2014-trial',
+tpl: $('<div />').html(data),
+closeButtonSelector: '#modal-close',
+content: ''
+});
+$modal_window.show(); 
+}
+}
+}); 
+}
+});
+$A.modals['do_not_track_as_download'].push(
+'download/link/?ATIH2014_trial_en-EU.exe',
+'download/link/?ATIH2014_trial_en-EU.exe#PREMIUM'
+);
+$('a[href$="download/link/?ATIH2014_trial_en-EU.exe"]').on('click', function(e) {
+e.preventDefault();
+$A.modals['ati2014-trial']({
+pn: 'ati2014',
+lsd: {
+cloud: {
+old_acc: 'ATI2014-Cloud-Local',
+new_acc: 'ATI2014-Cloud-Local-New'
+},
+product: 'ATI2014-Local',
+trigger: 'ATI2014-Trial-PopUP'
+}
+});
+});
+$('a[href$="download/link/?ATIH2014_trial_en-EU.exe#PREMIUM"]').on('click', function(e) {
+e.preventDefault();
+$A.modals['ati2014-trial']({
+pn: 'ati2014p',
+lsd: {
+cloud: {
+old_acc: 'ATI2014P-Cloud-Local',
+new_acc: 'ATI2014P-Cloud-Local-New'
+},
+product: 'ATI2014P-Local',
+trigger: 'ATI2014P-Trial-PopUP'
+} 
+});
+});
+if ( /(\/homecomputing\/trueimage\/gettrial\/)/.test(window.location.pathname) ) {
+$A.modals['ati2014-trial']({
+output: 'clear_html',
+pn: 'ati2014',
+lsd: {
+cloud: {
+old_acc: 'ATI2014-Cloud-Local',
+new_acc: 'ATI2014-Cloud-Local-New'
+},
+product: 'ATI2014-Local',
+trigger: 'ATI2014-GetTrial-Page'
+}
+}, function(html) {
+$('.a-content-tabs-ct').html('<div class="clear-html modal_ati2014-trial">' + html + '</div>');
+});
+}
+});
+</script>
+<script>
+$(function() {
+if (!window.$A) $A = {};
+if (!window.$A.modals) $A.modals = {};
+if (!window.$A.modals.do_not_track_as_download) $A.modals.do_not_track_as_download = [];
+var $modal_window = $();
+$.extend($A.modals, {
+'atiformac-trial': function(options, callback) {
+$A.modals['atiformac-trial'].data = {};
+$.extend($A.modals['atiformac-trial'].data, {
+referrer: encodeURIComponent([location.pathname, location.search, location.hash].join('')),
+cookie_session: !!$A.util.cookie('AcronisSID.en_uk'),
+user: { 'email': '' }
+}, options);
+var modal_data = $A.modals['atiformac-trial'].data;
+if (modal_data.cookie_session) {
+var lsd = [
+'t,', modal_data.lsd.trigger, ';',
+'soa,', modal_data.lsd.cloud.old_acc, ';',
+'sna,', modal_data.lsd.cloud.new_acc, ';'
+];
+var url = [
+location.protocol, '//', 
+'www.acronis.com/en-gb', 
+'/homecomputing/trueimageformac/thanks/',
+'?rr=', modal_data.referrer, 
+'&pn=', modal_data.pn 
+];
+$.ajax({
+url: '//www.acronis.com/en-gb/ajax/add_cloud.json',
+cache: false,
+type: 'POST',
+dataType: 'json',
+data: { 
+'ms': new Date().getTime(),
+'lsd_new_acc': modal_data.lsd.cloud.new_acc,
+'lsd_old_acc': modal_data.lsd.cloud.old_acc,
+'pn': modal_data.pn,
+'trigger': modal_data.lsd.trigger
+},
+success: function (data) {
+var status = data.Status,
+email = data.Email,
+date = data.StartDate;
+if (status && status != 'noSession') {
+switch (status) {
+case 'hasOBSubscription':
+url.push('&existuser=e');
+url.push('&hascloud=r');
+lsd.push('s,', modal_data.lsd.product, ';');
+break;
+case 'errorAddOBSubscription':
+url.push('&existuser=e');
+url.push('&errcloud=r');
+lsd.push('s,', modal_data.lsd.product, ';');
+break; 
+case 'incompleteRequest':
+console.warn('captcha');
+return;
+break; 
+case 'OK':
+url.push('&existuser=e');
+url.push('&okcloud=r');
+lsd.push('s,', modal_data.lsd.cloud.old_acc, ';');
+break;
+default:
+url.push('&existuser=e');
+url.push('&accerr=r');
+lsd.push('s,', modal_data.lsd.cloud.old_acc, ';');
+} 
+url.push('&lsd=', encodeURIComponent(lsd.join('')), '&ue=' + encodeURIComponent(email) + '&d=' + encodeURIComponent(date));
+window.location.replace(url.join(''));
+return;
+}
+}
+});
+}
+var loaded = $('.modal_atiformac-trial').length > 0;
+if (loaded) {
+$modal_window.show();
+return;
+};
+$.ajax({
+url: '//www.acronis.com/en-gb/includes/modals/atiformac-trial.html',
+dataType: 'html',
+type: 'POST',
+xhrFields: {withCredentials: true},
+success: function (data) {
+if ($A.modals['atiformac-trial'].data.output == 'clear_html') {
+if (callback) callback(data);
+} else {
+$modal_window = new $A.Window({
+autoshow: true,
+modal: true,
+center: true,
+cls: 'modal_atiformac-trial',
+tpl: $('<div />').html(data),
+closeButtonSelector: '#modal-close',
+content: ''
+});
+$modal_window.show(); 
+}
+}
+}); 
+}
+});
+$A.modals['do_not_track_as_download'].push(
+'download/link/?AcronisTrueImage.dmg'
+);
+$('a[href$="download/link/?AcronisTrueImage.dmg"]').on('click', function(e) {
+e.preventDefault();
+$A.modals['atiformac-trial']({
+pn: 'atiformac',
+lsd: {
+cloud: {
+old_acc: 'ATIFORMAC-Cloud-Local',
+new_acc: 'ATIFORMAC-Cloud-Local-New'
+},
+product: 'ATIFORMAC-Local',
+trigger: 'ATIFORMAC-Trial-PopUP'
+}
+});
+});
+if ( /(\/homecomputing\/trueimageformac\/gettrial\/)/.test(window.location.pathname) ) {
+$A.modals['atiformac-trial']({
+output: 'clear_html',
+pn: 'atiformac',
+lsd: {
+cloud: {
+old_acc: 'ATIFORMAC-Cloud-Local',
+new_acc: 'ATIFORMAC-Cloud-Local-New'
+},
+product: 'ATIFORMAC-Local',
+trigger: 'ATIFORMAC-GetTrial-Page'
+}
+}, function(html) {
+$('.a-content-tabs-ct').html('<div class="clear-html modal_atiformac-trial">' + html + '</div>');
+});
+}
+});
+</script>
+<script>
+try {
+window.ARGS = (function() {
+var queryParams = document.location.search.replace(/^\?/, '').split('&'),
+i = queryParams.length,
+params = {};
+while (i--) {
+if (!queryParams[i].length) continue;
+var param = queryParams[i].split('=');
+params[param[0]] = decodeURIComponent(param[1].replace(/\+/g, ' '));
+}
+return params;
+})();
+if (typeof window.ARGS.source_detail !== 'undefined' && !$A.util.cookie('source_detail')) {
+$A.util.cookie('source_detail', window.ARGS.source_detail, {
+path: "/",
+expires: 256
+});
+}
+} catch (e) {};
+</script>
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PFG6ZF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PFG6ZF');</script>
+
+<script src="//www.acronis.com/en-gb/js/crosssys/load.js"></script>
+<script src="//www.acronis.com/en-gb/js/crosssys/asm-d7-d8.js" class="optanon-category-C0003"></script>
+<script>
+$(function() {
+(function(d) {
+var as = d.createElement('script'), e = d.body.lastChild; 
+as.src = '//www.acronis.com/en-gb/js/analytics/kharkiv_footer.js?rev=' + Math.floor(Math.random()*101),
+e.parentNode.insertBefore(as, e); 
+})(document);
+})
+</script>
+<style type="text/css">
+li.cart a span {
+display:inline-block;
+width: 18px; 
+height: 17px; 
+background:url(/sites/default/public_files/cart.png);
+}
+li.cart:hover a span {
+background-position: 18px 0;
+}
+</style></body></html>

@@ -1,0 +1,15 @@
+200 OK
+Retry-Count: 0
+Vary: Accept-Encoding
+X-Request-Id: 2775ef669d7bfea753a0e7c3c62e2abe
+X-Frame-Options: SAMEORIGIN
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+X-Int-Request-Id: 8885c6af56ac481b92f5261f11dc582a
+Access-Control-Allow-Credentials: true
+Front-End-Https: on
+Server: nginx
+Date: Fri, 28 Aug 2020 15:03:34 GMT
+Content-Type: text/xml; charset=utf-8
+X-Content-Type-Options: nosniff
+Access-Control-Expose-Headers: ETag,Content-Length,Content-Type,Retry-After
+P3p: CP="ALL IND DSP COR ADM CONo CUR CUSo IVAo IVDo PSA PSD TAI TELo OUR SAMo CNT COM INT NAV ONL PHY PRE PUR UNI"

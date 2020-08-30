@@ -1,0 +1,18 @@
+200 OK
+Vary: Accept-Encoding
+Referrer-Policy: strict-origin-when-cross-origin no-referrer-when-downgrade
+X-Runtime: 0.022734
+X-Frame-Options: SAMEORIGIN
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+X-Discourse-Trackview: 1
+X-Xss-Protection: 1; mode=block
+Cache-Control: no-cache, no-store
+X-Request-Id: 7dc28ec4-9789-4363-b11e-cb4458f78241
+Strict-Transport-Security: max-age=31536000
+Server: nginx
+Date: Fri, 28 Aug 2020 15:03:17 GMT
+Content-Type: text/html; charset=utf-8
+X-Discourse-Route: static/show
+Retry-Count: 0

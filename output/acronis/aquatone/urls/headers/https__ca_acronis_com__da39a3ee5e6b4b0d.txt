@@ -1,0 +1,16 @@
+200 OK
+X-Ua-Compatible: IE=edge
+X-Cache-Status: HIT
+Content-Type: text/html; charset=UTF-8
+Vary: Accept-Encoding Cookie
+Cache-Control: max-age=8640000, public
+Server: nginx
+X-Content-Type-Options: nosniff
+Last-Modified: Thu, 27 Aug 2020 12:16:54 GMT
+X-Generator: Drupal 8 (https://www.drupal.org)
+Retry-Count: 0
+Link: <https://www.acronis.com/fr-ca/>; rel="shortlink", <https://www.acronis.com/fr-ca/>; rel="canonical"
+Content-Language: fr-ca
+Etag: W/"1598530614"
+Date: Fri, 28 Aug 2020 15:03:43 GMT
+Expires: Sun, 19 Nov 1978 05:00:00 GMT

@@ -1,0 +1,6 @@
+200 OK
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+Server: nginx
+Date: Fri, 28 Aug 2020 15:03:15 GMT
+Content-Type: text/plain; charset=utf-8
+Retry-Count: 0

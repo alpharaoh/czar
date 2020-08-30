@@ -13,7 +13,7 @@ def Files(data):
     output = f"{folder}/nuclei_files/{vuln.replace('.yaml','')}"
 
     try:
-        os.system(f"cat {folder}/final_targetUrls.txt | nuclei -t {nuclei_folder}/vulnerabilities/{vuln} > {output}.txt")
+        os.system(f"cat {folder}/final_targetUrls.txt | nuclei -t {nuclei_folder}/files/{vuln} > {output}.txt")
 
         if os.stat(f"{output}.txt").st_size == 0:
             os.system(f"sudo rm {output}.txt")

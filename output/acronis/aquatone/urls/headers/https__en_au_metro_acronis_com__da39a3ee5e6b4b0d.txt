@@ -1,0 +1,16 @@
+200 OK
+Retry-Count: 0
+Server: nginx
+Cache-Control: max-age=8640000, public
+Etag: W/"1598529948"
+X-Ua-Compatible: IE=edge
+X-Content-Type-Options: nosniff
+X-Generator: Drupal 8 (https://www.drupal.org)
+X-Cache-Status: HIT
+Date: Fri, 28 Aug 2020 15:03:55 GMT
+Link: <https://www.acronis.com/en-au/>; rel="shortlink", <https://www.acronis.com/en-au/>; rel="canonical"
+Content-Language: en-au
+Expires: Sun, 19 Nov 1978 05:00:00 GMT
+Last-Modified: Thu, 27 Aug 2020 12:05:48 GMT
+Content-Type: text/html; charset=UTF-8
+Vary: Accept-Encoding Cookie

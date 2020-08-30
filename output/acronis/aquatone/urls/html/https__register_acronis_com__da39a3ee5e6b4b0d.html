@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+	  var Mkt3L10n = {
+		currLanguage: "en_US",
+		currLocale: "en_US",
+		defaultLanguage: "en_US",
+		defaultLocale: "en_US",
+		qaLanguage: ["hu","af","fi"],
+		currTimezone: "America/Chicago",
+		defaultBranding: "Default",
+		currBranding: "Default",
+		currTimezoneShort: "CDT",
+		currTimezoneUTCOffset: -18000,
+		subTimezoneShort: "CDT",
+		subLanguage: "en_US",
+		buildEnv: "prod",
+		buildVersion: "20200823220210",
+		patternTimeShort: "g:i A",
+		patternDateShort: "m/j/Y",
+		patternDateMedium: "M j, Y",
+		patternDateMediumWithoutYear: "M j",
+		patternDateLong: "F j, Y",
+		patternDateTimeShorter: "M j, g:i A",
+		patternDateTimeShort: "m/j/Y g:i A",
+		patternDateTimeMedium: "M j, Y g:i A",
+		patternDateTimeLong: "F j, Y g:i:s A",
+		patternDateTimeFull: "l j F Y G:i:s",
+		currCurrency: [],
+		supportedCurrency: [{"code":"USD","displayName":"(USD) US Dollar","symbolHtml":"$"},{"code":"EUR","displayName":"(EUR) Euro","symbolHtml":"&euro;"},{"code":"ARS","displayName":"(ARS) Argentine Peso","symbolHtml":"$"},{"code":"AUD","displayName":"(AUD) Australian Dollar","symbolHtml":"$"},{"code":"BRL","displayName":"(BRL) Brazilian Real","symbolHtml":"R$"},{"code":"GBP","displayName":"(GBP) Pound Sterling","symbolHtml":"&pound;"},{"code":"CAD","displayName":"(CAD) Canadian Dollar","symbolHtml":"$"},{"code":"CLP","displayName":"(CLP) Chile Pesos","symbolHtml":"$"},{"code":"CNY","displayName":"(CNY) China Yuan Renminbi","symbolHtml":"&yen;"},{"code":"HRK","displayName":"(HRK) Croatia Kuna","symbolHtml":"kn"},{"code":"CZK","displayName":"(CZK) Czech Republic Koruny","symbolHtml":"K\u010d"},{"code":"DKK","displayName":"(DKK) Denmark Kroner","symbolHtml":"kr"},{"code":"HKD","displayName":"(HKD) Hong Kong Dollar","symbolHtml":"$"},{"code":"ILS","displayName":"(ILS) Israel New Shekels","symbolHtml":"&#8362;"},{"code":"MXN","displayName":"(MXN) Mexico Pesos","symbolHtml":"$"},{"code":"ANG","displayName":"(ANG) Netherlands Antilles Guilders","symbolHtml":"&#402;"},{"code":"NZD","displayName":"(NZD) New Zealand Dollar","symbolHtml":"NZ$"},{"code":"NOK","displayName":"(NOK) Norway Kroner","symbolHtml":"kr"},{"code":"SGD","displayName":"(SGD) Singapore Dollars","symbolHtml":"$"},{"code":"ZAR","displayName":"(ZAR) South Africa Rand","symbolHtml":"R"},{"code":"SEK","displayName":"(SEK) Sweden Kronor","symbolHtml":"kr"},{"code":"CHF","displayName":"(CHF) Switzerland Francs","symbolHtml":"CHF"},{"code":"TWD","displayName":"(TWD) Taiwan New Dollars","symbolHtml":"NT$"},{"code":"JPY","displayName":"(JPY) Japan Yen","symbolHtml":"&yen;"}]
+	 }
+	</script>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Login | Marketo</title>
+	<meta name="title" content="Marketo Login">
+	<meta name="description" content="Login to Marketo">
+	<meta name="keywords" content="Marketo login">
+          <link rel="stylesheet" type="text/css" media="screen" href="/css/newbrand/login.css?cb=20200823220210">
+          <link rel="stylesheet" type="text/css" media="screen" href="/css/newbrand/normalize.css?cb=20200823220210">
+          <link rel="stylesheet" type="text/css" media="screen" href="/css/newbrand/carboltLogin.css?cb=20200823220210">
+          <link rel="stylesheet" type="text/css" media="screen" href="/css/newbrand/purpleLogin.css?cb=20200823220210">
+    
+      <script type="text/javascript">
+      (function() {
+        try {
+          var origin = window.parent.origin;
+        } catch (e) {
+                    if(window.self !== window.parent) {
+            window.parent.postMessage({ type: 'classicTimedOut', url: window.location.href }, 'https://engage-sj.marketo.com/');
+            window.stop();
+          }
+        }
+      })();
+    </script>
+  
+	<!-- Marketing Access -->
+      <script src="/js/public/jquery-1.12.4/jquery.min.js"></script>
+  	<!-- /Marketing Access -->
+  <script>
+// Array
+var externalScripts = ["\/\/micro.marketo.com\/login\/master.js"];
+var externalLinks = ["\/\/micro.marketo.com\/login\/master.css"];
+
+jQuery.support.placeholder = (function(){
+    var i = document.createElement('input');
+    return 'placeholder' in i;
+})();
+
+function addScripts(scripts) {
+  for (var i in scripts) {
+    jQuery.getScript(scripts[i]);
+  }
+}
+
+function addStyleSheets(styleSheets) {
+
+  for (var i in styleSheets) {
+    if (document.createStyleSheet) {
+      document.createStyleSheet(styleSheets[i]);
+    }
+    else {
+      $("head").append($("<link rel='stylesheet' type='text/css' media='screen' href= "+ styleSheets[i] +" />"));
+    }
+  }
+}
+
+jQuery.outerHTML = function(node){
+	// if IE, Chrome take the internal method otherwise build one
+	return node.outerHTML || (function(n){
+		var div = document.createElement('div'), h;
+		div.appendChild( n.cloneNode(true) );
+		h = div.innerHTML;
+		div = null;
+		return h;
+	})(node);
+};
+
+(function($){
+	if (!$.support.placeholder) {
+		$(function(){
+			var $placeholded = $('input[placeholder]');
+			$placeholded.each(function(idx){
+				var $this = $(this), $that = $this;
+				$this.addClass('idx-'+idx);
+				if ($.trim($this.val()) === '') {
+					if ($this.attr('type').toLowerCase() === 'password') {
+						var $clone = $($.outerHTML($this[0]).replace('password','text'));
+            $clone.attr('name', 'ignoreField');
+						$that = $clone.hide().insertAfter($this);
+						$this.add($that).toggle();
+					}
+					$that.val($this.attr('placeholder'));
+				}
+				$that.bind('focusin',function(){
+					if ($this !== $that) {
+						$this.add($that).toggle();
+						setTimeout(function() {
+             $this.trigger('focus');
+            }, 10);
+					} else if ($.trim($that.val()) === $.trim($that.attr('placeholder'))) {
+						$that.val('');
+					}
+				});
+				$this.bind('focusout',function(){
+					if ($.trim($this.val()) === '') {
+						if ($this.attr('type').toLowerCase() === 'password') {
+							$this.val('').add($that).toggle();
+						} else {
+							$this.val($this.attr('placeholder'));
+						}
+					}
+				});
+			});
+		});
+	}
+
+	$(function(){
+		$('span','.buttonSubmit').click(function(){
+			$(this).siblings('input').click();
+		});
+	});
+})(jQuery);
+  $(document).ready(function() {
+
+      addScripts(externalScripts);
+      addStyleSheets(externalLinks);
+  });
+
+  $(function(){
+    $('.login-tab').click(function(){
+      $(this).siblings().removeClass('login-tab-selected');
+      $(this).addClass('login-tab-selected');
+    });
+  });
+
+  </script>
+
+<script type="text/javascript" src="/js/i18n.js"></script>
+<script type="text/javascript" src="/js/firebug/firebug.js"></script>
+<script type="text/javascript" src="/js/cmb/mktLoginAll_20200823220210_.js"></script>
+</head>
+<body class="marketo links-ok rev1">
+
+<div id="footer">
+	<p>Copyright &copy; 2020 Marketo, Inc. All rights reserved.</p>
+</div>
+<div id="logo" class="available"><a href="http://marketo.com"><img src="/mkt-3.0/resources/images/default/app/marketo-login-brand-mark.svg"/></a></div>
+<table id="frame" class="nonAdminLogin"><tbody>
+	<tr class="top">
+		<td class="left"></td>
+		<td class="center">
+			<span id="header">
+				<ul>
+		  <li id="languageSelector"><script type="text/javascript">
+  function changeLanguage(language) {
+    var path = window.location.pathname;
+    var languageString = '/lang/'+language;
+    path = path.replace(/\/lang\/[^\/]*/i,languageString);
+    if(path.indexOf('/lang/') == -1) {
+      path = '/homepage/login' + languageString
+    }
+    location = path + location.search;
+  }
+  function showLanguageOtions() {
+    $("#languageSelector ul").slideToggle("fast");
+    $("#languageSelector").toggleClass("languageSelectorOpen");
+  }
+  
+  $(document).mouseup(function (e) {
+    var container = $("#languageSelector");
+    if (!container.is(e.target) && container.has(e.target).length === 0) {
+      $("#languageSelector ul").hide();
+      $("#languageSelector").removeClass("languageSelectorOpen");
+    }
+  });
+  
+</script>
+<a href="javascript:showLanguageOtions()" style="color: #808285;" class="currentLanguage">English</a>
+<ul>
+  <li><a href="javascript:changeLanguage('en_US')">English</a></li>
+  <li><a href="javascript:changeLanguage('de')">Deutsch</a></li>
+  <li><a href="javascript:changeLanguage('es')">Español</a></li>
+  <li><a href="javascript:changeLanguage('fr')">Français</a></li>
+  <li><a href="javascript:changeLanguage('pt')">Português</a></li>
+  <li><a href="javascript:changeLanguage('ja')">日本語</a></li>
+</ul></li>
+          <li><a style="color: #808285" href="http://www.marketo.com" target="_blank">Marketo.com</a></li>
+          <li><a style="color: #808285" href="http://launchpoint.marketo.com/" target="_blank">LaunchPoint</a><li>
+		      <li><a style="color: #808285" href="http://blog.marketo.com" target="_blank">Blog</a></li>
+          <li><a style="color: #808285" href="https://www.marketo.com/company/contact/" target="_blank">Contact Us</a></li>
+          <li class="last"><a style="color: #808285" href="http://www.marketo.com/about/news/" target="_blank">News</a></li>
+        </ul>
+			</span>
+    </td>
+    <td class="right"></td>
+	</tr>
+  <!-- This is one is just for adding some space so that we can add a border -->
+
+	<tr class="middle">
+		<td class="left"></td>
+		<td id="content" class="center" style="border-top: none;">
+			<div id="login-container" class="login-top">
+			  				<div id="login">
+                      <h1 id="login_title">Login to Marketo</h1>
+          
+            <div id="loginBox">
+  <div class="content-container-wide title">
+  </div> 
+    
+<div class="content-container-narrow">
+
+	
+	  <form class="loginContent login " name="mktLogin" id="mktLogin" onsubmit="MktLogin.submitLoginForm(this); return false;" method="POST">
+
+	    <div id="custLoginMessage" class="marketoAlert" style="visibility: hidden; font: bold 16px arial;"></div>
+      <div id="custLoginResetMessage" class="marketoInfo" style="visibility: hidden; font: bold 16px arial;"></div>
+	    <div id="custGhostLoginMessage" class="marketoGhostUserAlert" style="visibility: hidden; font: bold 16px arial;"></div>
+	    <table cellspacing="0" class="login-form">
+	      <tr>
+	        <td><input class="login-field" placeholder="Email" id="loginUsername" maxlength="80" name="username" size="25" type="text" tabIndex="1" value='' autocomplete="off"/></td>
+	      </tr>
+	      <tr>
+	        <td>
+	          <input class="login-field" placeholder="Password" id="loginPassword" maxlength="40" name="passwd" size="25" type="password" tabIndex="2" autocomplete="off"/>
+	        </td>
+	      </tr>
+            <input id="useOkta" name="prodId" type="hidden" value='1'>
+                  <tr>
+            <td>
+              <select class="login-field" id="loginProduct" name="pod" size="1" style="display:none;">
+                <option value = "MLM" selected> Lead Management </option>
+              </select>
+            </td>
+          </tr>
+        <tr>
+                    </tr>
+         <input type="hidden" name="tok" id="tok" value='' />
+	                                  <tr>
+            <td>
+              <table class="loginActionGrid">
+                <tr>
+                    <td>
+                      <div class="top">
+                        <input id="rememberMe" name="rememberMe" type="checkbox" tabIndex="3"  />
+                        <label class="small" for="rememberMe">Remember Email</label>
+                      </div>
+                      <div class="bottom">
+                        <a class="small" onclick="showForgotPasswordPage()">Forgot Password?</a>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="buttonSubmit">
+	                    <span class="first"></span>
+	                    <input class="buttonSubmit" type="submit" value="Login" tabIndex="4" id="loginButton" />
+                        <span class="last"></span>
+	                  </div>
+                    </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        	    </table>
+	
+	    <input id="sfdcOrgId" name="sfdcOrgId" type="hidden" value='' />
+	    <input id="sfdcUserId" name="sfdcUserId" type="hidden" value='' />
+	    <input id="goto" name="goto" type="hidden" value='' />
+	    <input id="sso" name="sso" type="hidden" value='' />
+                	
+	    <div style="clear:both"></div>
+	  </form>
+  </div>
+  <div style="display: none;">
+    <div id = "termsAndConditionsModal" role = "dialog" title = "Terms and Conditions">
+      <p>This account enables the user to access additional Marketo instances. <br/><br/>By logging in, you acknowledge and agree that these additional instances may be hosted at data centers in different countries (including the US, the UK and Australia) and that the use of these instances may involve transfers of data processed by Marketo on behalf of its customers, as well as your personal data, to such countries. <br/><br/>Compliance with any governing data privacy or security laws remains the responsibility of the customer, insofar as they are not applicable to Marketo.</p>
+    </div>
+  </div>
+
+<script type="text/javascript">
+
+function showForgotPasswordPage()
+{
+  var link = "\/index.php\/homepage\/forgotPasswordRequest",
+      userid = $('#loginUsername').val(),
+      selectedPod = $('#loginProduct').val();
+
+  if (userid) {
+    if (selectedPod === MktLogin.Product_MLM) {
+      link += '?userEmail=' + encodeURIComponent(userid);
+    }
+    else {
+      MktLogin.initExternalAppForgotPasswordPage(userid);
+      return;
+    }
+  }
+  window.location.href = link;
+}
+
+(function() {
+    mimicPlaceholder();
+    if ($('#loginUsername').val()) {
+      MktLogin.showPodSelections();
+    }
+    $('#loginUsername').blur(function() {
+      if ($('#loginUsername').val()) {
+        MktLogin.showPodSelections();
+      }
+    });
+
+    MktLogin.initLoginPage(
+    true);
+
+    MktLogin.uiStyle = "purple";
+    
+    
+})();
+
+$(function(){
+  $('.login-tab').click(function(){
+    if ($(this).attr('id') === 'manage-access') {
+      $('.secondary-login').css('display', 'none');
+      $('#login').css('margin-bottom', '209px');
+      $('#login-type').attr('value', 'manage-access');
+            $('#loginPassword').css('display', 'none');
+              $('#loginUsername').attr('placeholder', 'Email');
+            $('.adminLogin #custLoginMessage.marketoAlert').css('bottom', '246px');
+          }
+    else {
+      $('.secondary-login').css('display', 'table-row');
+      $('#login').css('margin-bottom', '0');
+      $('#login-type').attr('value', 'ghost-login');
+              $('#loginPassword').css('display', 'table-row');
+              $('#loginUsername').attr('placeholder', 'Prefix');
+            $('.adminLogin #custLoginMessage.marketoAlert').css('bottom', '492px');
+          }
+  });
+});
+
+$(function() {
+  $("#termsAndConditionsModal").dialog({
+    autoOpen: false,
+    modal: true,
+    height: 450,
+    width: 500
+  });
+  $('.termsAndConditions').click(function() {
+    $("#termsAndConditionsModal").dialog('open');
+  });
+});
+
+</script>				</div>
+				<div id="login-butt"></div>
+			</div>
+		</td>
+		<td class="right"></td>
+	</tr>
+	<tr class="bottom">
+		<td class="left"></td>
+		<td class="center"></td>
+		<td class="right"></td>
+	</tr>
+</tbody></table>
+
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+200 OK
+X-Xss-Protection: 1; mode=block
+Server: nginx
+Content-Type: text/html; charset=utf-8
+X-Frame-Options: SAMEORIGIN
+Vary: Accept-Encoding
+X-Srv: partners
+Date: Fri, 28 Aug 2020 15:03:15 GMT
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+Retry-Count: 0

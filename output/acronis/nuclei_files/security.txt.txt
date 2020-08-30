@@ -1,0 +1,4 @@
+[[92msecurity-txt[0m] [[94mhttp[0m] http://store.acronis.com/.well-known/security.txt
+[[92msecurity-txt[0m] [[94mhttp[0m] https://store.acronis.com/.well-known/security.txt
+[[92msecurity-txt[0m] [[94mhttp[0m] https://www.acronis.com/.well-known/security.txt
+[[92msecurity-txt[0m] [[94mhttp[0m] https://www.acronis.com/security.txt

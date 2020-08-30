@@ -1,0 +1,16 @@
+200 OK
+Date: Fri, 28 Aug 2020 15:03:56 GMT
+Link: <https://www.acronis.com/en-eu/>; rel="shortlink", <https://www.acronis.com/en-eu/>; rel="canonical"
+Last-Modified: Thu, 27 Aug 2020 11:53:16 GMT
+X-Cache-Status: HIT
+Vary: Accept-Encoding Cookie
+Expires: Sun, 19 Nov 1978 05:00:00 GMT
+Server: nginx
+Content-Type: text/html; charset=UTF-8
+Content-Language: en-eu
+X-Content-Type-Options: nosniff
+Etag: W/"1598529196"
+Cache-Control: max-age=8640000, public
+X-Ua-Compatible: IE=edge
+X-Generator: Drupal 8 (https://www.drupal.org)
+Retry-Count: 0

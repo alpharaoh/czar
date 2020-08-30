@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en" id="login" api-address="/api/v1">
+<head>
+  <title>Acronis Access Public Server</title>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=0.4">
+<script>
+  // script for changing the initial zoom on mobile devices with bigger screens (tablets, etc...)
+    if (window.screen.availWidth >= 768) {
+        document
+                .querySelector("meta[name=viewport]")
+                .setAttribute('content', 'initial-scale=0.7');
+    }
+</script>
+
+<link rel="shortcut icon" type="image/x-icon" href="/assets/favicon-1421b0df7a6bd06dbd61b78c193cf410370011107245b1c2a1239f7d0e39b2cd.ico" acc-favicon="" />
+
+<link rel="stylesheet" media="screen" href="/assets/bootstrap/dist/css/bootstrap-b64af21a8a65b545fbf92f634758257f60811ee396598de3096c4a6f72bbd73e.css" />
+<link rel="stylesheet" media="screen" href="/assets/open-sans-fontface/open-sans-f4788aa99c8ef9ae8d45e6e9f2cde746d49d91ac006041e9bb2ce1fcf5d2c9c3.css" />
+<link rel="stylesheet" media="screen" href="/assets/font-awesome/css/font-awesome-1548651e8c9f66b584352422dabf38d9a57a0f8d584e5c900c5f830f8b4d035e.css" />
+<link rel="stylesheet" media="screen" href="/assets/font-access/style-fd0f9012cdce33cd144b954df382e7474d06c4cf806fddf240a71fff0f1df31f.css" />
+<link rel="stylesheet" media="screen" href="/assets/ui-icons-b866dae1b1ce5a5c71dfcf7a47a4a3de775577ca38c8ff509b8e3566f42e2773.css" />
+<link rel="stylesheet" media="screen" href="/assets/client-578a4380e7ce5d200a66b5599cced32d17451e9533510f9941bd5fe131a46e92.css" />
+<link rel="stylesheet" media="screen" href="/assets/web_client_blue-a68cc05776e19b6c13de93d76bc50910aa69cb532c3b05c276ec4d44ef8fcb8c.css" />
+
+<script src="/assets/client-3779cae23f032dda1dea1a72b30e8f22f52abdbb7047f3107c5e1e1cc4391c2c.js"></script>
+<script>
+//<![CDATA[
+
+  angular.module('access.Config')
+    .constant('ENV', {
+      apiAddress: "/api/v1",
+      colorScheme: "blue",
+      assetsDir: "/assets/",
+      templatesPath: '/assets/common/views/',
+      deploymentConfig: '{&quot;settings&quot;:{&quot;can_manage_quota_settings_via_api&quot;:true,&quot;can_manage_quota_settings_via_ui&quot;:true,&quot;can_manage_smtp_settings_via_ui&quot;:true,&quot;can_manage_customization_settings_via_api&quot;:true,&quot;can_manage_custom_preview_servlet_url&quot;:true,&quot;can_manage_pdf_previewer&quot;:true,&quot;show_footer&quot;:true,&quot;supports_mfa&quot;:true,&quot;supports_monitoring&quot;:true,&quot;supports_amazon_s3_storage&quot;:true,&quot;supports_microsoft_azure_storage&quot;:true,&quot;supports_trial_activation&quot;:true},&quot;tenants&quot;:{&quot;can_manage_quota_via_api&quot;:true},&quot;groups&quot;:{&quot;can_manage_quota_via_api&quot;:true},&quot;users&quot;:{&quot;can_manage_via_ui&quot;:true,&quot;can_manage_via_api&quot;:true,&quot;can_change_own_password&quot;:true,&quot;can_view_authentication_type&quot;:true,&quot;can_manage_quota_via_api&quot;:true,&quot;can_manage_quota_via_ui&quot;:true},&quot;devices&quot;:{&quot;requires_ldap&quot;:true,&quot;can_send_enrollment_invitations&quot;:true,&quot;can_view_management_status&quot;:true,&quot;can_manage_remotely&quot;:true},&quot;audit_log&quot;:{&quot;expose_device_info&quot;:true}}',
+      relativeUrlRoot: ''
+    })
+
+//]]>
+</script>
+
+  <meta name="apple-itunes-app" content="app-id=429704844">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="/assets/login-ceff0769cd1d0008ab70d184264afd8d36c2a83d1ae642c5ac84261362bc18cd.js"></script>
+</head>
+
+<body ng-app="accessLogin">
+<div class="main-outer">
+  <div class="main">
+    <div class="header-image">
+      <img class="logo_login" src="/assets/logos/on_premise_white-22d75eb1ad5d79fec1c2de31cd4bc45727ff007ad5aae005bc90ab1f28cef02e.svg" alt="On premise white" />
+    </div>
+
+    <div class="box">
+      <div class="box-content">
+        
+<div class="header-text">
+  <h2 class="" >
+      Please log in
+  </h2>
+
+
+  
+
+
+
+</div>
+
+<div class="controls">
+  <form action="/web_sessions" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="O9AHOo2iXbOb7IabsC5SJfLFCXdG8DbnbtPZnpqDByhs2vN2qo4LuAd7n5GbUgKlPVSoggNE7+JFqPo3bI/C/g==" />
+    <div class="inputs-wrap">
+      <div class="input-div">
+        <input placeholder="Username or email" tabindex="1" class="inputs" spellcheck="false" type="text" name="session[email]" id="session_email" />
+        <span class="icon icon-acc-login"></span>
+      </div>
+
+      <div class="input-div">
+        <input autocomplete="off" placeholder="Password" tabindex="2" class="inputs" type="password" name="session[password]" id="session_password" />
+        <span class="icon icon-acc-password"></span>
+      </div>
+    </div>
+    <div class="buttons-wrap">
+      <button name="commit" type="submit" class="btn btn-primary btn-lg pull-left" id="login-button" value="Log in">Log in</button>
+      <a class="btn btn-link pull-right" id="to-recover" href="/reset_password/new">
+        Forgot password?
+</a>    </div>
+</form></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="footer">
+<footer>
+  © 2002-2020 Acronis International GmbH. All rights reserved. |
+  <span class="product_version">Version&nbsp;8.6.1x1028 |</span>
+  <a class="colored" href="https://www.acronis.com/support/documentation/AcronisCyberFiles/index.html" target="_blank">Help</a>
+</footer>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+200 OK
+Content-Type: text/html; charset=utf-8
+X-Generator: Drupal 7 (http://drupal.org)
+Link: <https://www.acronis.com/en-us/blog/>; rel="canonical",<https://www.acronis.com/en-us/blog/>; rel="shortlink"
+Last-Modified: Fri, 28 Aug 2020 14:57:04 GMT
+X-Xss-Protection: 1; mode=block
+Date: Fri, 28 Aug 2020 15:03:43 GMT
+Retry-Count: 0
+X-Drupal-Cache: MISS
+Content-Language: en
+Server: nginx
+X-Content-Type-Options: nosniff
+Cache-Control: public, max-age=10800
+X-Frame-Options: SAMEORIGIN SAMEORIGIN
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+Etag: "1598626624-1"
+Expires: Sun, 19 Nov 1978 05:00:00 GMT
+Vary: Cookie Accept-Encoding

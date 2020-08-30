@@ -1,0 +1,10 @@
+200 OK
+X-Web: yes
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+X-Xss-Protection: 1; mode=block
+Server: nginx
+Date: Fri, 28 Aug 2020 15:03:14 GMT
+Content-Type: text/html
+Last-Modified: Wed, 05 Aug 2020 08:49:32 GMT
+Etag: W/"5f2a729c-11bf"
+Retry-Count: 0

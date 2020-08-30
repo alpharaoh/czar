@@ -1,0 +1,10 @@
+200 OK
+Date: Fri, 28 Aug 2020 15:03:17 GMT
+Retry-Count: 0
+Vary: Accept-Encoding
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+Server: nginx
+X-Frame-Options: SAMEORIGIN
+X-Xss-Protection: 1; mode=block
+X-Srv: partners
+Content-Type: text/html; charset=utf-8

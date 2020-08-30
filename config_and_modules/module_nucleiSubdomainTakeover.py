@@ -8,12 +8,15 @@ import config_and_modules.module_slack
 
 def httpx(folder):
     try:
+        print("RUNNING HTTPX")
+        os.system("pwd")
+        os.system(f"cat {folder}/final_Subdomains.txt")
         start_time = config_and_modules.module_timer.start_timer()
         os.system(f"cat {folder}/final_Subdomains.txt | httpx -silent | tee {folder}/subdomain_enum/{PROJECT_NAME}_httpx.txt")
         config_and_modules.module_timer.end_timer("Httpx",folder,start_time)
     except Exception as error:
-        print(f"{error}\nSomethings went wrong.")
-        config_and_modules.module_slack.error(error,"nucleiSubdomainTakeover [httpx()]")
+        	print(f"{error}\nSomethings went wrong.")
+        	config_and_modules.module_slack.error(error,"nucleiSubdomainTakeover [httpx()]")
 
 def subdomain_Takeover(folder, nuclei_folder):
     try:

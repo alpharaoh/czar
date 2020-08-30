@@ -34,8 +34,9 @@ class ProjectA():
     #Start to parallel process modules
 
     def nuclei_SubdomainTakeover(self):
+        os.system("pwd")
         exec(open('./config_and_modules/module_nucleiSubdomainTakeover.py').read())
-    
+
     def liveTargetFinder(self):
         exec(open('./config_and_modules/module_liveTargetFinder.py').read())
 
@@ -67,17 +68,17 @@ class ProjectA():
     def aquatone_Ips(self):
         exec(open('./config_and_modules/module_aquatone_Ips.py').read())
 
-    def threading(self,folder):
-        thread0 = Thread(target = self.liveTargetFinder)
-        thread1 = Thread(target = self.nuclei_SubdomainTakeover)
+#    def threading(self,folder):
+#        thread0 = Thread(target = self.liveTargetFinder)
+#        thread1 = Thread(target = self.nuclei_SubdomainTakeover)
 
-        thread0.start()
-        thread1.start()
+#        thread0.start()
+#        thread1.start()
 
-        thread0.join()
-        thread1.join()
+#        thread0.join()
+#        thread1.join()
 
-        os.system(f"cat {folder}/subdomain_enum/{PROJECT_NAME}_httpx.txt {folder}/livetargetsfinder_output/final_Subdomains_targetUrls.txt | sort -u | tee {folder}/final_targetUrls.txt") 
+#        os.system(f"cat {folder}/subdomain_enum/{PROJECT_NAME}_httpx.txt {folder}/livetargetsfinder_output/final_Subdomains_targetUrls.txt | sort -u | tee {folder}/final_targetUrls.txt") 
 
     def threading2(self):
         os.system(f"sudo mkdir {a}/ffuf/")
@@ -118,7 +119,10 @@ a = config_and_modules.module_validation.output_folder()
 main = ProjectA()
 main.ASN_module() #optional
 main.subdomain_Enum()
-main.threading(a) #nuclei subdomain takeover + livetargetsfinder
+#main.threading(a) #nuclei subdomain takeover + livetargetsfinder
+main.liveTargetFinder()
+main.nuclei_SubdomainTakeover()
+os.system(f"cat {a}/subdomain_enum/{PROJECT_NAME}_httpx.txt {a}/livetargetsfinder_output/final_Subdomains_targetUrls.txt | sort -u | tee {a}/final_targetUrls.txt")
 main.threading2() #portscan + ffuf + waybackurls + nuclei CVE's
 main.aquatone_Ips() #using ips and ports found from 'ports' module
 

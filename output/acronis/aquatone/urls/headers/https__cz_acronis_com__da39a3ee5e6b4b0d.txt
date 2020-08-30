@@ -1,0 +1,12 @@
+200 OK
+Link: <https://www.acronis.cz/wp-json/>; rel="https://api.w.org/", <https://www.acronis.cz/>; rel=shortlink
+Vary: Accept-Encoding
+Referrer-Policy: 
+Content-Type: text/html; charset=UTF-8
+Date: Fri, 28 Aug 2020 14:41:24 GMT
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate
+Pragma: no-cache
+Set-Cookie: PHPSESSID=mditurp8jd25hm8a1n0f8j4t4r; path=/
+Retry-Count: 0
+Server: Apache/2.4.38 (Debian)

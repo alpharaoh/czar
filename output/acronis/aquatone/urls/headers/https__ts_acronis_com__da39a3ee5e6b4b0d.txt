@@ -1,0 +1,10 @@
+200 OK
+Content-Type: text/xml; charset=utf-8
+Content-Length: 14804
+Retry-Count: 0
+Cache-Control: no-cache
+Pragma: no-cache
+Expires: -1
+Server: Microsoft-IIS/10.0
+Set-Cookie: TSWAFeatureCheckCookie=true; path=/RDWeb/
+Date: Fri, 28 Aug 2020 15:03:19 GMT

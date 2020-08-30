@@ -1,0 +1,13 @@
+200 OK
+X-Content-Type-Options: nosniff
+Cf-Cache-Status: DYNAMIC
+Server: cloudflare
+Set-Cookie: __cfduid=ddce0ecdf3e9fa337bb6b5f2c691acdd81598627041; expires=Sun, 27-Sep-20 15:04:01 GMT; path=/; domain=.info.acronis.com; HttpOnly; SameSite=Lax
+Content-Type: text/html
+Cache-Control: private, no-cache, no-store, max-age=0
+Vary: Accept-Encoding
+Cf-Request-Id: 04d731e97400006b9515819200000001
+Expect-Ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+Cf-Ray: 5c9eec225d856b95-LHR
+Retry-Count: 0
+Date: Fri, 28 Aug 2020 15:04:01 GMT

@@ -15,12 +15,12 @@ MAINSCOPE="acronis.com"
 #List of the seed/root domains
 #If ASN scanning is activated, this is not need. (recommended to do some manual recon (i.e Google Fu, Crunchbase, etc.) and put all domains-
 #inside this file)
-TARGET_LIST="/home/alpharaoh/acronis/recon_12Augacronis_domains_alive.txt"
+TARGET_LIST="/root/amass/acronis/roots.txt"
 
 #Defualt output folder is ~/output
 #e.g. /root/output/
 #If you supply a directory and it's not found, it will create one there.
-OUTPUT_FOLDER="/home/alpharaoh/Documents/ProjectA/output/"
+OUTPUT_FOLDER="/root/ProjectA/output/"
 
 #Interesting VHOSTS to add (default wordlist of vhosts will be checked)
 #e.g. VHOST=["example1","example2"]
@@ -31,14 +31,14 @@ VHOST=[]
 FFUF_DIR=False
 
 #This wordlist will be added to, so make sure you supply a copy
-DIR_WORDLIST="/home/alpharaoh/Documents/wl.txt"
+DIR_WORDLIST="/root/wordlist/wl.txt"
 
 #This wordlist is for VHOSTS. A defualt vhosts file is supplied already.
-VHOST_WORDLIST="/usr/share/wfuzz/wordlist/Injections/vhosts.txt"
+VHOST_WORDLIST="/root/ProjectA/Tools/vhosts.txt"
 
 #Amount of threads to use. Higher = Faster.
 #I recommend 200 threads, but for less capable hardware, put this number lower.
-THREADS=200
+THREADS=20
 
 #File to reolvers. 
 #e.g. /dir/dir/resolvers.txt
@@ -51,13 +51,14 @@ PORT_SCAN="0-65535"
 #Directory to "nuclei-templates"
 #e.g. /dir/dir/nuclei-templates
 #Leave blank to choose default location (./Tools/nuclei-templates)
-NUCLEI_DIR="/home/alpharaoh/Documents/ProjectA/Tools/nuclei-templates"
+NUCLEI_DIR="/root/ProjectA/Tools/nuclei-templates"
 
 #Slack webhook used to notify you when:
 #   - any nuclei templates have been successful
 #   - when process is complete
 #   - and more cool things!
-SLACK_WEBHOOK="https://hooks.slack.com/services/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"
+SLACK_WEBHOOK_ERROR="https://hooks.slack.com/services/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"
+SLACK_WEBHOOK_FINDINGS="https://hooks.slack.com/services/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"
 
 ################## MORE CONFIGS ###################
 

@@ -1,0 +1,8 @@
+200 OK
+Server: nginx
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+X-Xss-Protection: 1; mode=block
+Date: Fri, 28 Aug 2020 15:03:59 GMT
+Content-Type: application/json
+X-Powered-By: PHP/7.3.10
+Retry-Count: 0

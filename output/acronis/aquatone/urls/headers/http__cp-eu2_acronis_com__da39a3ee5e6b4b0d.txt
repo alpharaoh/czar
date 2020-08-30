@@ -1,0 +1,11 @@
+200 OK
+Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips
+Strict-Transport-Security: max-age=31536000
+Cache-Control: max-age=31536000, public
+Accept-Ranges: bytes
+Last-Modified: Wed, 20 Nov 2019 22:12:14 GMT
+Content-Type: text/html; charset=UTF-8
+X-Forwarded-Proto: https
+Date: Fri, 28 Aug 2020 15:03:30 GMT
+Set-Cookie: JSESSIONID=AmwP5_FEXxnIwf9alwQFfYTpJylpAFJq_mKqouCB.10.253.20.11; path=/; HttpOnly; Secure
+Retry-Count: 0

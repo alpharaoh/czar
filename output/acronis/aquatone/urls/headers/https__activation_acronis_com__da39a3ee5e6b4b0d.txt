@@ -1,0 +1,10 @@
+200 OK
+Retry-Count: 0
+Server: nginx
+Last-Modified: Fri, 24 Jun 2011 08:27:30 GMT
+X-Srv: activations
+Etag: "5ae201-0-4a670f8f20080"
+Accept-Ranges: bytes
+Date: Fri, 28 Aug 2020 15:03:39 GMT
+Content-Type: text/html; charset=UTF-8
+Content-Length: 0

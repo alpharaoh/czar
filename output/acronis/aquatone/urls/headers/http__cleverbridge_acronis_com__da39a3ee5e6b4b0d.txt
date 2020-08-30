@@ -1,0 +1,7 @@
+401 Authorization Required
+Www-Authenticate: Basic realm="Hidden Realm"
+Server: nginx
+Date: Fri, 28 Aug 2020 15:03:28 GMT
+Content-Type: text/html; charset=iso-8859-1
+Content-Length: 475
+Retry-Count: 0

@@ -1,0 +1,14 @@
+403 Forbidden
+Access-Control-Allow-Headers: Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent,X-Amz-Object-Map,Range,Content-MD5,if-match
+Retry-Count: 0
+X-Amz-Err-Code: AccessDenied
+Access-Control-Allow-Methods: GET, DELETE, POST, PUT, OPTIONS, HEAD
+Access-Control-Expose-Headers: Content-Length,ETag,X-Amz-Meta-Custom-Header,X-Amz-Notary-Provider,X-Amz-Cert,X-Amz-Notary-Hash,X-Amz-Notary-Protocol
+Content-Type: application/xml
+Date: Fri, 28 Aug 2020 15:03:17 GMT
+X-Amz-Req-Time-Micros: 53
+Access-Control-Allow-Credentials: true
+Server: nginx
+X-Amz-Request-Id: 80000000000000870006ee5353fc48f2
+X-Amz-Err-Message: 
+Access-Control-Allow-Origin: *
