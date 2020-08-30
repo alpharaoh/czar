@@ -1,5 +1,0 @@
-[[92mhost-header-injection[0m] [[94mhttp[0m] https://access.acronis.com/
-[[92mhost-header-injection[0m] [[94mhttp[0m] https://dr.acronis.com/
-[[92mhost-header-injection[0m] [[94mhttp[0m] https://my.acronis.com/
-[[92mhost-header-injection[0m] [[94mhttp[0m] https://nps.acronis.com/
-[[92mhost-header-injection[0m] [[94mhttp[0m] https://redapi.acronis.com/

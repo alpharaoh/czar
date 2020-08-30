@@ -17,7 +17,11 @@ def error(error,module_name):
 
 def nucleiCVE(cve):
     data = {
+<<<<<<< HEAD
         "text":f"*CRITICAL :grinning:, [{cve}] WAS FOUND ON {PROJECT_NAME.upper()}!!*"
+=======
+        "text":f"*QUICK :grinning:, [{cve}] WAS FOUND ON {PROJECT_NAME.upper()}!!*"
+>>>>>>> 6e7f86c9e9fde4fabfb6d5ebff0840e32bfa2ba9
     }
     sendMessage(data)
 
@@ -35,7 +39,11 @@ def nucleiVulnerabilities(vuln):
 
 def nucleiSubdomainTakeover():
     data = {
+<<<<<<< HEAD
         "text":f"*CRITICAL :grinning:, A SUBDOMAIN ON {PROJECT_NAME.upper()} CAN BE TAKEN OVER!!*"
+=======
+        "text":f"*QUICK :grinning:, A SUBDOMAIN ON {PROJECT_NAME.upper()} CAN BE TAKEN OVER!!*"
+>>>>>>> 6e7f86c9e9fde4fabfb6d5ebff0840e32bfa2ba9
     }
     sendMessage(data)
 
@@ -43,6 +51,6 @@ def finished(folder):
     
     timings = open(f"{folder}/{PROJECT_NAME}_timings.txt","r").read()
     data = {
-        "text":f"*FINISHED - [{PROJECT_NAME.upper()}] -*\n\n{timings}"
+        "text":f"*FINISHED :sweat_smile: - [{PROJECT_NAME.upper()}] -*\n\n{timings}"
     }
     sendMessage(data)

@@ -1,9 +1,0 @@
-200 OK
-Last-Modified: Fri, 18 Aug 2017 09:10:36 GMT
-Access-Control-Allow-Credentials: false
-Server: nginx
-Date: Fri, 28 Aug 2020 15:03:13 GMT
-Content-Type: text/html; charset=utf-8
-Content-Length: 669
-Retry-Count: 0
-Accept-Ranges: bytes

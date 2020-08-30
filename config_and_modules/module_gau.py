@@ -9,7 +9,7 @@ def gau(folder):
     subdomains = open(f"{folder}/final_Subdomains.txt","r").read().split("\n")
     try:
         for i in subdomains:
-            os.system(f"gau {i} -o | tee {folder}/gau/{i}_gau.txt")
+            os.system(f"gau {i} -o > tee {folder}/gau/{i}_gau.txt")
 
             if os.stat(f"{folder}/gau/{i}_gau.txt").st_size == 0:
                 os.system(f"sudo rm {folder}/gau/{i}_gau.txt")

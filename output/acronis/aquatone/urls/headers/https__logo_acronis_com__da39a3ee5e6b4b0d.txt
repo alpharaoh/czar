@@ -1,9 +1,0 @@
-200 OK
-Date: Fri, 28 Aug 2020 15:03:12 GMT
-Last-Modified: Thu, 18 Oct 2018 08:35:43 GMT
-X-Xss-Protection: 1; mode=block
-Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
-Server: nginx
-Content-Type: text/html
-Retry-Count: 0
-Etag: W/"5bc845df-2750"

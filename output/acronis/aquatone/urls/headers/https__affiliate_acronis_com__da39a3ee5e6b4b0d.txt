@@ -1,9 +1,0 @@
-200 OK
-Server: nginx
-Content-Type: text/html
-Retry-Count: 0
-Last-Modified: Tue, 31 Dec 2019 21:44:58 GMT
-X-Xss-Protection: 1; mode=block
-Date: Fri, 28 Aug 2020 15:03:38 GMT
-Etag: W/"5e0bc15a-320c"
-Strict-Transport-Security: max-age=31536000; includeSubDomains; preload

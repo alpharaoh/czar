@@ -1,9 +1,0 @@
-200 OK
-Link: <https://help.dr.acronis.com/index.php?rest_route=/>; rel="https://api.w.org/" <https://help.dr.acronis.com/>; rel=shortlink
-X-Xss-Protection: 1; mode=block
-Date: Fri, 28 Aug 2020 15:04:00 GMT
-Content-Type: text/html; charset=UTF-8
-X-Powered-By: PHP/7.1.22
-Server: nginx
-Retry-Count: 0
-Strict-Transport-Security: max-age=31536000; includeSubDomains; preload

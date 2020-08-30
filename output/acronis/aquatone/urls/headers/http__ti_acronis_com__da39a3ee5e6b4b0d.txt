@@ -1,9 +1,0 @@
-200 OK
-Content-Type: text/html
-Cache-Control: private, no-cache, no-store, max-age=0
-X-Content-Type-Options: nosniff
-Vary: Accept-Encoding
-Retry-Count: 0
-Date: Fri, 28 Aug 2020 15:03:35 GMT
-Server: Apache
-Set-Cookie: BIGipServersj_mailtracking_http=!1mXQ7aoa+UwJ2m3InuzRy4alk/3R/hBa+NH6tmEoAWzgci9tAIlTtVtXgwAHpi2d2FG/VIc3vfuegNI=; path=/; Httponly

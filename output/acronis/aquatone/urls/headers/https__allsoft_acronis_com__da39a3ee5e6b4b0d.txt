@@ -1,9 +1,0 @@
-200 OK
-Vary: Accept-Encoding
-Cache-Control: no-cache
-Set-Cookie: additional_parameters=a%3A0%3A%7B%7D; expires=Mon, 12-Oct-2020 15:03:40 GMT; Max-Age=3888000; path=/
-Server: nginx
-Date: Fri, 28 Aug 2020 15:03:40 GMT
-Content-Type: text/html; charset=UTF-8
-Strict-Transport-Security: max-age=15768000
-Retry-Count: 0
