@@ -6,6 +6,7 @@ from config_and_modules.config import *
 import config_and_modules.module_timer
 import config_and_modules.module_validation
 import config_and_modules.module_slack
+import config_and_modules.module_iterating
 
 class Subdomain_Enumeration():
     def Subfinder(self, folder):
@@ -97,43 +98,91 @@ class Subdomain_Enumeration():
 
         except Exception as error:
             print(f"{error}\nSomething went wrong")
-            config_and_modules.module_slack.error(error,"subdomains [tls_Bufferover()]")
+            config_and_modules.module_slack.error(error,"subdomains [tls_Bufferover()] no data found or too much data (timeout)")
 
-    def sort_Final(self,folder):
+    def newCheck(self,folder,iteration_number):
+        new = f"{folder}/final_Subdomains_number_{iteration_number}.txt"
+        old = f"{folder}/final_Subdomains_number_{iteration_number-1}.txt"
+
+        if iteration_number == 2:
+            os.system(f"echo 'www.acronis.com' >> {new}")
+
+        os.system(f"diff {old} {new} | grep '>' > {folder}/diff.txt")
+
+        if os.stat(f"{folder}/diff.txt").st_size != 0:
+            fil = open(f"{folder}/diff.txt","r")
+            subdomains = fil.read()
+            fil.close()
+
+            config_and_modules.module_slack.newSubdomains(subdomains)
+            os.system(f"rm {folder}/diff.txt")
+        else:
+            os.system(f"rm {folder}/diff.txt")
+
+    def sort_Final(self,folder,iteration_number=None):
         try:
-            os.system(f"cat {folder}/subdomain_enum/{PROJECT_NAME}_subfinder.txt {folder}/subdomain_enum/{PROJECT_NAME}_amass.txt {folder}/subdomain_enum/{PROJECT_NAME}_sublister.txt {folder}/subdomain_enum/{PROJECT_NAME}_git_subdomains.txt {folder}/subdomain_enum/{PROJECT_NAME}_tls_subdomains.txt | sort -u > {folder}/final_Subdomains.txt")
+            if iteration_number != None and iteration_number != 0:
+                os.system(f"cat {folder}/subdomain_enum/{PROJECT_NAME}_subfinder.txt {folder}/subdomain_enum/{PROJECT_NAME}_amass.txt {folder}/subdomain_enum/{PROJECT_NAME}_sublister.txt {folder}/subdomain_enum/{PROJECT_NAME}_git_subdomains.txt {folder}/subdomain_enum/{PROJECT_NAME}_tls_subdomains.txt | sort -u > {folder}/final_Subdomains_number_{iteration_number}.txt")
+                os.system(f"rm -r {folder}/subdomain_enum/")
+
+                if iteration_number != 0:
+                    ##Check if there is new subdomains.
+                    self.newCheck(folder, iteration_number)
+
+                iteration_file = open(f"{folder}/number_of_runs.txt","a")
+                iteration_file.write(f"{iteration_number+1}\n")
+                iteration_file.close()
+
+                iteration_number = config_and_modules.module_iterating.wait()
+            else: 
+                os.system(f"cat {folder}/subdomain_enum/{PROJECT_NAME}_subfinder.txt {folder}/subdomain_enum/{PROJECT_NAME}_amass.txt {folder}/subdomain_enum/{PROJECT_NAME}_sublister.txt {folder}/subdomain_enum/{PROJECT_NAME}_git_subdomains.txt {folder}/subdomain_enum/{PROJECT_NAME}_tls_subdomains.txt | sort -u > {folder}/final_Subdomains.txt")
+
         except Exception as error:
             print(f"{error}\nSomething went wrong")
             config_and_modules.module_slack.error(error,"subdomains [tls_Bufferover()]")
 
+    def start(self,a,iteration_number=None):
+        os.system(f"sudo mkdir {a}/subdomain_enum/")
+
+        b = config_and_modules.module_validation.resolvers()
+
+        #thread0 = Thread(target = self.Subfinder, args=(a,))
+        #thread1 = Thread(target = self.Amass, args=(a,b,))
+        #thread2 = Thread(target = self.Sublister, args=(a,))
+        #thread3 = Thread(target = self.GithubSubdomains, args=(a,))
+        thread4 = Thread(target = self.tls_Bufferover, args=(a,))
+
+        #thread0.start()
+        #thread1.start()
+        #thread2.start()
+        #thread3.start()
+        thread4.start()
+
+        #thread0.join()
+        #thread1.join()
+        #thread2.join()
+        #thread3.join()
+        thread4.join()
+
+        #Cat's all subdomains and sorts into a final file.
+        self.sort_Final(a,iteration_number)
+
 if __name__ == "__main__":
+    enum = Subdomain_Enumeration()
     start_time = config_and_modules.module_timer.start_timer()
-
     a = config_and_modules.module_validation.output_folder() #returns path to project folder as string
-    b = config_and_modules.module_validation.resolvers()
+    b = a + "/iterating/"
 
-    os.system(f"sudo mkdir {a}/subdomain_enum/")
+    if ITERATING:
+        #Check iteration
+        iteration_number = config_and_modules.module_iterating.check_iteration(b)
 
-    subdomain_class = Subdomain_Enumeration()
-    thread0 = Thread(target = subdomain_class.Subfinder, args=(a,))
-    thread1 = Thread(target = subdomain_class.Amass, args=(a,b,))
-    thread2 = Thread(target = subdomain_class.Sublister, args=(a,))
-    thread3 = Thread(target = subdomain_class.GithubSubdomains, args=(a,))
-    thread4 = Thread(target = subdomain_class.tls_Bufferover, args=(a,))
+        if iteration_number == 0:
+            enum.start(a)
 
-    thread0.start()
-    thread1.start()
-    thread2.start()
-    thread3.start()
-    thread4.start()
-
-    thread0.join()
-    thread1.join()
-    thread2.join()
-    thread3.join()
-    thread4.join()
-
-    #Cat's all subdomains and sorts into a final file.
-    subdomain_class.sort_Final(a)
+        else:   
+            enum.start(b,iteration_number)
+    else:
+        enum.start(a)
 
     config_and_modules.module_timer.end_timer("Total time gathering subdomains",a,start_time)

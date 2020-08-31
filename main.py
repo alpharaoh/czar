@@ -4,18 +4,8 @@ import time
 import datetime
 from threading import Thread
 from config_and_modules.config import *
-import config_and_modules.module_ports
-import config_and_modules.module_subdomains
-import config_and_modules.module_liveTargetFinder
-import config_and_modules.module_nucleiSubdomainTakeover
-import config_and_modules.module_nucleiVulnerabilities
-import config_and_modules.module_initial
 import config_and_modules.module_validation
-import config_and_modules.module_timer
-import config_and_modules.module_ffuf_vhost
-import config_and_modules.module_aquatone_targetUrls
-import config_and_modules.module_aquatone_Ips
-import config_and_modules.module_slack
+import config_and_modules.module_iterating
 
 if sys.version_info < (3, 0):
     sys.stdout.write("Sorry, this tool only works with Python 3.X\n")
@@ -117,13 +107,18 @@ class ProjectA():
 
 #Start timer
 start_time = config_and_modules.module_timer.start_timer()
-
 a = config_and_modules.module_validation.output_folder()
+
+if ITERATING:
+    os.system(f"mkdir {a}/iterating/")
+    iteration_file = open(f"{a}/iterating/number_of_runs.txt","w")
+    iteration_file.write("0\n")
+    iteration_file.close()
 
 main = ProjectA()
 main.ASN_module() #optional
 main.subdomain_Enum()
-#main.threading(a) #nuclei subdomain takeover + livetargetsfinder
+######main.threading(a) #nuclei subdomain takeover + livetargetsfinder
 main.liveTargetFinder()
 main.nuclei_SubdomainTakeover()
 os.system(f"cat {a}/subdomain_enum/{PROJECT_NAME}_httpx.txt {a}/livetargetsfinder_output/final_Subdomains_targetUrls.txt | sort -u | tee {a}/final_targetUrls.txt")
@@ -132,3 +127,12 @@ main.aquatone_Ips() #using ips and ports found from 'ports' module
 
 config_and_modules.module_timer.end_timer("Total",a,start_time)
 config_and_modules.module_slack.finished(a)
+
+if ITERATING:
+    time.sleep(RECURSION)
+    iteration_file = open(f"{a}/iterating/number_of_runs.txt","a")
+    iteration_file.write("1\n")
+    iteration_file.close()
+    while True:
+        main.subdomain_Enum()
+

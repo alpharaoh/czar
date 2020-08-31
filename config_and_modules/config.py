@@ -12,6 +12,12 @@ PROJECT_NAME="acronis"
 #e.g. target.com
 MAINSCOPE="acronis.com"
 
+#Are you iterating subdomains enumeration
+ITERATING=True
+
+#If so, how often to run subdomain enumeration. New subdomains will be notified on slack
+RECURSION=10
+
 #List of the seed/root domains
 #If ASN scanning is activated, this is not need. (recommended to do some manual recon (i.e Google Fu, Crunchbase, etc.) and put all domains-
 #inside this file)
@@ -20,7 +26,7 @@ TARGET_LIST="/root/amass/acronis/roots.txt"
 #Defualt output folder is ~/output
 #e.g. /root/output/
 #If you supply a directory and it's not found, it will create one there.
-OUTPUT_FOLDER="/root/ProjectA/output/"
+OUTPUT_FOLDER="/home/alpharaoh/Documents/ProjectAWIP/ProjectA/output"
 
 #Interesting VHOSTS to add (default wordlist of vhosts will be checked)
 #e.g. VHOST=["example1","example2"]
@@ -59,6 +65,7 @@ NUCLEI_DIR="/root/ProjectA/Tools/nuclei-templates"
 #   - and more cool things!
 SLACK_WEBHOOK_ERROR="https://hooks.slack.com/services/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"
 SLACK_WEBHOOK_FINDINGS="https://hooks.slack.com/services/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"
+SLACK_WEBHOOK_SUBDOMAINS="https://hooks.slack.com/services/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"
 
 ################## MORE CONFIGS ###################
 
