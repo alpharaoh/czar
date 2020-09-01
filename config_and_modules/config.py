@@ -16,7 +16,7 @@ MAINSCOPE="acronis.com"
 ITERATING=True
 
 #If so, how often to run subdomain enumeration. New subdomains will be notified on slack
-RECURSION=10
+RECURSION=86400
 
 #List of the seed/root domains
 #If ASN scanning is activated, this is not need. (recommended to do some manual recon (i.e Google Fu, Crunchbase, etc.) and put all domains-

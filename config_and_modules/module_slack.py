@@ -18,6 +18,12 @@ def error(error,module_name):
     }
     sendErrorMessage(data)
 
+def smuggler(domain):
+    data = {
+        "text":f"*CRITICAL :grinning:* \n HTTP REQUEST SMUGGLING ON {domain}"
+    }
+    sendMessage(data)
+
 def newSubdomains(subdomain_file):
     data = {
         "text":f"*NEW SUBDOMAINS :grinning:* \n {subdomain_file}"
@@ -27,6 +33,30 @@ def newSubdomains(subdomain_file):
 def nucleiCVE(cve):
     data = {
         "text":f"*CRITICAL :grinning:, [{cve}] WAS FOUND ON {PROJECT_NAME.upper()}!!*"
+    }
+    sendMessage(data)
+
+def nucleiDNS(dns):
+    data = {
+        "text":f"*QUICK :grinning:, DNS ISSUE WAS FOUND ON {PROJECT_NAME.upper()}!!* {dns}"
+    }
+    sendMessage(data)
+
+def nucleiGeneric(dns):
+    data = {
+        "text":f"*QUICK :grinning:, GENERIC ISSUE WAS FOUND ON {PROJECT_NAME.upper()}!!* {dns}"
+    }
+    sendMessage(data)
+
+def nucleiSecurityMisconfig(dns):
+    data = {
+        "text":f"*QUICK :grinning:, SECURITY MISCONFIG ISSUE WAS FOUND ON {PROJECT_NAME.upper()}!!* {dns}"
+    }
+    sendMessage(data)
+
+def nucleiTechnologies(dns):
+    data = {
+        "text":f"*QUICK :grinning:, TECHNOLOGY ISSUE WAS FOUND ON {PROJECT_NAME.upper()}!!* {dns}"
     }
     sendMessage(data)
 
