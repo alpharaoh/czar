@@ -14,10 +14,10 @@ def getTargetDomains(folder: str) -> list:
     return targets
 
 def genericDetections(target):
-    os.system(f"echo '{target}' | nuclei -t {NUCLEI_DIR}/generic-detections/ >> nuclei_genericDetections.txt") #idgaf
+    os.system(f"echo '{target}' | nuclei -t {NUCLEI_DIR}/generic-detections/ >> {OUTPUT_FOLDER}/{target.replace("http://","").replace("https://","")}_nuclei_genericDetections.txt") #idgaf
 
-    if os.stat(f"nuclei_SecurityMisconfig.txt").st_size == 0:
-        os.system(f"rm nuclei_SecurityMisconfig.txt")
+    if os.stat(f"{OUTPUT_FOLDER}/{target.replace("http://","").replace("https://","")}_nuclei_genericDetections.txt").st_size == 0:
+        os.system(f"rm {OUTPUT_FOLDER}/{target.replace("http://","").replace("https://","")}_nuclei_genericDetections.txt")
     else:
         config_and_modules.module_slack.nucleiGeneric(target)
 
