@@ -69,8 +69,8 @@ class Subdomain_Enumeration():
             data = request.json().get("Results")
 
             for i in data:
-                j = i.split(",,")
-                ips.append(j[0])
+                j = i.split(",")
+                ips.append(j[-1])
 
                 #if wildcard found in subdomain, skip
                 if "*" in j[1]:
