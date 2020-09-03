@@ -14,10 +14,10 @@ def getTargetDomains(folder: str) -> list:
     return targets
 
 def DNS(target):
-    os.system(f"echo '{target}' | nuclei -t {NUCLEI_DIR}/dns/ >> {OUTPUT_FOLDER}/{target.replace("http://","").replace("https://","")}_nuclei_DNS.txt") #idgaf
+    os.system(f'echo "{target}" | nuclei -t {NUCLEI_DIR}/dns/ >> {OUTPUT_FOLDER}/{target.replace("http://","").replace("https://","")}_nuclei_DNS.txt') #idgaf
 
-    if os.stat(f"{OUTPUT_FOLDER}/{target.replace("http://","").replace("https://","")}_nuclei_DNS.txt").st_size == 0:
-        os.system(f"rm {OUTPUT_FOLDER}/{target.replace("http://","").replace("https://","")}_nuclei_DNS.txt")
+    if os.stat(f'{OUTPUT_FOLDER}/{target.replace("http://","").replace("https://","")}_nuclei_DNS.txt').st_size == 0:
+        os.system(f'rm {OUTPUT_FOLDER}/{target.replace("http://","").replace("https://","")}_nuclei_DNS.txt')
     else:
         config_and_modules.module_slack.nucleiDNS(target)
 
