@@ -13,7 +13,6 @@ rm amass_linux_amd64.zip
 mv ./amass_linux_amd64/amass /usr/local/bin/
 rm -r amass_linux_amd64/
 
-
 wget https://github.com/projectdiscovery/nuclei/releases/download/v2.1.0/nuclei_2.1.0_linux_amd64.tar.gz
 tar -xzvf nuclei_2.1.0_linux_amd64.tar.gz
 rm LICENSE.md
@@ -29,12 +28,20 @@ rm README.md
 mv httpx /usr/local/bin/
 
 cd ./Tools/
+rm -r livetargetsfinder
+rm -r smuggler
+rm -r nuclei-templates
 git clone https://github.com/allyomalley/LiveTargetsFinder.git
+rm livetargetsfinder
 mv LiveTargetsFinder livetargetsfinder
+apt install python3-pip
 cd ./livetargetsfinder
 pip3 install -r requirements.txt
 chmod +x install_deps.sh
 ./install_deps.sh
+
+git clone https://github.com/projectdiscovery/nuclei-templates.git
+git clone https://github.com/defparam/smuggler.git
 
 wget https://github.com/ffuf/ffuf/releases/download/v1.1.0/ffuf_1.1.0_linux_amd64.tar.gz
 tar -xzvf ffuf_1.1.0_linux_amd64.tar.gz 
@@ -49,5 +56,4 @@ tar xvf gau_1.0.3_linux_amd64.tar.gz
 rm LICENSE 
 rm README.md 
 mv gau /usr/local/bin
-rm gau_1.0.3_linux_amd64.tar.gz 
-
+rm gau_1.0.3_linux_amd64.tar.gz
