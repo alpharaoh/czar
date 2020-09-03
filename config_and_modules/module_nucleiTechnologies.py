@@ -14,7 +14,7 @@ def getTargetDomains(folder: str) -> list:
     return targets
 
 def genericDetections(target):
-    os.system(f"echo '{target}' | nuclei -t {NUCLEI_DIR}/technologies/ >> {OUTPUT_FOLDER}/{target.replace("http://","").replace("https://","")}_nuclei_Technologies.txt") #idgaf
+    os.system(f"echo '{target}' | nuclei -t {NUCLEI_DIR}/technologies/ > {OUTPUT_FOLDER}/{target.replace("http://","").replace("https://","")}_nuclei_Technologies.txt") #idgaf
 
     if os.stat(f"{OUTPUT_FOLDER}/{target.replace("http://","").replace("https://","")}_nuclei_Technologies.txt").st_size == 0:
         os.system(f"rm {OUTPUT_FOLDER}/{target.replace("http://","").replace("https://","")}_nuclei_Technologies.txt")
