@@ -1,3 +1,2 @@
-# czar
-V0.1 [BETA]
-A tool for bug hunting
+# Czar V0.1
+A tool for bug hunting made by alpharaoh
