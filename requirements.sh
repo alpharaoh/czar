@@ -58,3 +58,14 @@ rm LICENSE
 rm README.md 
 mv gau /usr/local/bin
 rm gau_1.0.3_linux_amd64.tar.gz
+
+pip3 install colored
+pip3 install tldextract
+
+git clone https://github.com/rthalley/dnspython
+cd dnspython/
+python3 setup.py install
+cd ..
+rm -r dnspython/
+
+printf "\n\n\n\n\nFINISHED! please head over to the config.py file in config_and_modules to set things up!\n\n"
