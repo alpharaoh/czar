@@ -39,6 +39,7 @@ cd ./livetargetsfinder
 pip3 install -r requirements.txt
 chmod +x install_deps.sh
 ./install_deps.sh
+cd ..
 
 git clone https://github.com/projectdiscovery/nuclei-templates.git
 git clone https://github.com/defparam/smuggler.git
