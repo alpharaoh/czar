@@ -104,9 +104,6 @@ class Subdomain_Enumeration():
         new = f"{folder}/final_Subdomains_number_{iteration_number}.txt"
         old = f"{folder}/final_Subdomains_number_{iteration_number-1}.txt"
 
-        if iteration_number == 2:
-            os.system(f"echo 'www.acronis.com' >> {new}")
-
         os.system(f"diff {old} {new} | grep '>' > {folder}/diff.txt")
 
         if os.stat(f"{folder}/diff.txt").st_size != 0:
