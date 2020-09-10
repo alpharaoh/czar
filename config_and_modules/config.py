@@ -6,27 +6,27 @@
 #Project name is important
 #Provide unique name for every run
 #A folder will be created in output named your project_name
-PROJECT_NAME="acronis"
+PROJECT_NAME="project1"
 
 #This is for some subdomain enumeration tools. 
 #e.g. target.com
-MAINSCOPE="acronis.com"
+MAINSCOPE="target.com"
 
 #Are you iterating subdomains enumeration
 ITERATING=True
 
-#If so, how often to run subdomain enumeration. New subdomains will be notified on slack
+#If so, how often to run subdomain enumeration. New subdomains will be notified on slack. 86400s is 1 day
 RECURSION=86400
 
 #List of the seed/root domains
 #If ASN scanning is activated, this is not need. (recommended to do some manual recon (i.e Google Fu, Crunchbase, etc.) and put all domains-
 #inside this file)
-TARGET_LIST="/root/amass/acronis/roots.txt"
+TARGET_LIST="/root/roots.txt"
 
 #Defualt output folder is ~/output
 #e.g. /root/output/
 #If you supply a directory and it's not found, it will create one there.
-OUTPUT_FOLDER="/home/alpharaoh/Documents/ProjectAWIP/ProjectA/output"
+OUTPUT_FOLDER="/home/username/Documents/ProjectA/output"
 
 #Interesting VHOSTS to add (default wordlist of vhosts will be checked)
 #e.g. VHOST=["example1","example2"]
@@ -63,9 +63,9 @@ NUCLEI_DIR="/root/ProjectA/Tools/nuclei-templates"
 #   - any nuclei templates have been successful
 #   - when process is complete
 #   - and more cool things!
-SLACK_WEBHOOK_ERROR="https://hooks.slack.com/services/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"
-SLACK_WEBHOOK_FINDINGS="https://hooks.slack.com/services/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"
-SLACK_WEBHOOK_SUBDOMAINS="https://hooks.slack.com/services/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"
+SLACK_WEBHOOK_ERROR=""
+SLACK_WEBHOOK_FINDINGS=""
+SLACK_WEBHOOK_SUBDOMAINS=""
 
 ################## MORE CONFIGS ###################
 
@@ -91,5 +91,5 @@ ASN_GREP="acronis.com"
 
 #################### API KEYS: #################### 
 
-GITHUB_TOKEN="0a71c2aab35a160ed8fc811f63710c0582333a8c"
-#SHODAN_KEY="pIOlZD13g2UiblhGGyaOR2cqMwstOaZB"
+GITHUB_TOKEN=""
+#SHODAN_KEY=""
