@@ -68,18 +68,18 @@ recursive:
     - virustotal
 binaryedge: []
 censys:
-    - 54482de1-2820-453a-bff6-84a3b8de66ba:c0sNqrB0J3nI90f2hB7bzSq2KGD9cWKu
+    - 
 certspotter: []
 chaos: []
 dnsdb: []
 github:
-    - 7bbc77dae130bec43001df7c31a95e6c7ad4e8bd
-    - ec7672ce7e928e275b4c867a765d203185a12157
+    - 
+    - 
 intelx: []
 passivetotal: []
 securitytrails: []
 shodan:
-    - pIOlZD13g2UiblhGGyaOR2cqMwstOaZB
+    - 
 spyse: []
 urlscan: []
 virustotal: []
